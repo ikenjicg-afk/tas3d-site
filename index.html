@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>TAS3D 2026 — Tashkent architecture visualisation conference</title>
-<meta name="description" content="TAS3D — конференция о 3D-визуализации в архитектуре. Ташкент, 03.12.2026.">
+<title>TAS3D 2026 — Tashkent architecture visualisation forum</title>
+<meta name="description" content="TAS3D — форум о 3D-визуализации в архитектуре. Ташкент, 03.12.2026.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:type" content="website">
-<meta property="og:title" content="TAS3D 2026 — конференция о 3D-визуализации в архитектуре">
+<meta property="og:title" content="TAS3D 2026 — форум о 3D-визуализации в архитектуре">
 <meta property="og:description" content="Ташкент, 03.12.2026, 15:00–19:00. Central Asian University.">
 <meta property="og:image" content="media/tas3d-2025-poster.jpg">
 <meta name="theme-color" content="#0e0e0e">
@@ -523,6 +523,10 @@ body{background:var(--bg)}
   .ab-ph{aspect-ratio:3/2}
   .info{padding-bottom:clamp(220px,32vh,360px)}
 }
+/* v21: FAQ year label; longer audience descriptions */
+.faq-yr{margin:0 0 clamp(14px,1.4vw,22px);font-size:clamp(20px,2vw,32px);letter-spacing:-.02em;line-height:1.05}
+.list li span{line-height:1.4;max-width:58ch}
+@media (max-width:900px){.list li{gap:8px}}
 </style>
 </head>
 <body>
@@ -567,7 +571,7 @@ body{background:var(--bg)}
       <div class="hv-grain"></div>
     </div>
     <section class="hero">
-      <h1 class="sr">TAS3D 2026 — Tashkent architecture visualisation conference</h1>
+      <h1 class="sr">TAS3D 2026 — Tashkent architecture visualisation forum</h1>
       <div class="hero-row" aria-hidden="true">
         <span class="fw hl">TAS3D</span>
         <span class="fw hr">2026</span>
@@ -586,11 +590,11 @@ body{background:var(--bg)}
     <section class="blk g12">
       <p class="k" data-t="ab.who">Для кого</p>
       <ul class="v list">
-        <li><b data-t="who.1">Архитекторы</b><span data-t="who.1d">Показываете проект заказчику и хотите делать это сильнее</span></li>
-        <li><b data-t="who.2">3D-визуализаторы</b><span data-t="who.2d">Ищете новые приёмы, инструменты и людей из отрасли</span></li>
-        <li><b data-t="who.3">Дизайнеры</b><span data-t="who.3d">Интерьер и ландшафт: хотите понимать пайплайн визуализации</span></li>
-        <li><b data-t="who.4">Девелоперы</b><span data-t="who.4d">Принимаете решения по визуалам и хотите знать, что можно получить</span></li>
-        <li><b data-t="who.5">Студенты</b><span data-t="who.5d">Хотите увидеть, как выглядит работа после учёбы</span></li>
+        <li><b data-t="who.1">Архитекторы</b><span data-t="who.1d">Архитектору важно понимать, что происходит в индустрии визуализации и графики: от этого зависит, каким заказчик увидит проект. Вы узнаете, какие инструменты и нейросети уже используют студии и как быстрее прийти от эскиза к убедительной картинке. И сможете найти визуализаторов для своих проектов.</span></li>
+        <li><b data-t="who.2">3D-визуализаторы</b><span data-t="who.2d">Здесь собираются те, кто делает визуализацию каждый день. Вы увидите, как работают сильные студии и какие приёмы и инструменты они используют, и поймёте, куда движется профессия. А ещё это повод познакомиться вживую с коллегами и заказчиками.</span></li>
+        <li><b data-t="who.3">Дизайнеры</b><span data-t="who.3d">Дизайнеру интерьера и ландшафта важно понимать, как проект превращается в картинку и что влияет на результат. Вы увидите весь процесс визуализации: модель, материалы, свет и финальную подачу. Это помогает точнее ставить задачу визуализатору или делать визуал самому.</span></li>
+        <li><b data-t="who.4">Девелоперы</b><span data-t="who.4d">Визуализация продаёт проект ещё до того, как он построен. Вы узнаете, какие форматы сейчас работают, от статичных рендеров до real-time и анимации, и на что смотреть при выборе подрядчика. Так решения по визуалу проекта становятся увереннее.</span></li>
+        <li><b data-t="who.5">Студенты</b><span data-t="who.5d">Учёба даёт основу, но работу в индустрии лучше увидеть своими глазами. Практики расскажут, как устроены реальные проекты и с чего начать карьеру. А ещё здесь можно познакомиться со студиями и найти первые контакты в профессии.</span></li>
       </ul>
     </section>
 
@@ -664,11 +668,18 @@ body{background:var(--bg)}
 
     <section class="blk g12">
       <p class="k" data-t="ab.faq">Вопросы</p>
-      <div class="v faq">
-        <details open><summary data-t="faq.q1">Нужна ли регистрация?</summary><p data-t="faq.a1">Да. Мест ограниченное количество, поэтому заявка обязательна. После проверки придёт подтверждение.</p></details>
-        <details><summary data-t="faq.q2">Сколько стоит участие?</summary><p data-t="faq.a2"><span class="ph-in">[Бесплатно / стоимость и что входит]</span></p></details>
-        <details><summary data-t="faq.q4">Будет ли сертификат?</summary><p data-t="faq.a4"><span class="ph-in">[Да / нет]</span></p></details>
-        <details><summary data-t="faq.q5">Подойдёт ли новичку?</summary><p data-t="faq.a5">Да. В программе есть вводные доклады и мастер-классы для тех, кто только начинает.</p></details>
+      <div class="v">
+        <p class="faq-yr">TAS3D 2026</p>
+        <div class="faq">
+        <details open><summary data-t="faq.q1">Нужна ли регистрация?</summary><p data-t="faq.a1">Да. Количество мест ограничено, поэтому регистрация обязательна.</p></details>
+        <details><summary data-t="faq.q2">Сколько стоит участие?</summary><p data-t="faq.a2">Бесплатно. Нужно только зарегистрироваться.</p></details>
+        <details><summary data-t="faq.q3">Подойдёт ли новичку?</summary><p data-t="faq.a3">Да. TAS3D подойдёт всем: и тем, кто только начинает, и тем, кто давно в профессии.</p></details>
+        <details><summary data-t="faq.q4">Можно ли пообщаться со спикером лично и задать вопросы?</summary><p data-t="faq.a4">Да, конечно. В программе есть кофе-брейк: в это время спикеры общаются с участниками форума, к ним можно подойти и задать вопрос.</p></details>
+        <details><summary data-t="faq.q5">Сколько будет длиться TAS3D 2026?</summary><p data-t="faq.a5">Примерно 4–6 часов.</p></details>
+        <details><summary data-t="faq.q6">На каком языке пройдёт форум?</summary><p data-t="faq.a6">На русском и английском. Доклады англоязычных спикеров будут с переводчиком.</p></details>
+        <details><summary data-t="faq.q7">Нужно ли что-то брать с собой?</summary><p data-t="faq.a7">Только QR-код. После регистрации Luma пришлёт его вам: сохраните и покажите на входе. Больше ничего не нужно, главное — приходите сами.</p></details>
+        <details><summary data-t="faq.q8">А я классный человек?</summary><p data-t="faq.a8">Да, несомненно.</p></details>
+        </div>
       </div>
     </section>
     </div>
@@ -694,9 +705,9 @@ body{background:var(--bg)}
       <p class="k" data-t="ab.what">Что такое TAS3D</p>
       <div class="v">
         <figure class="ab-ph"><img src="media/about/tas3d-2025-hall-2400.jpg" srcset="media/about/tas3d-2025-hall-1200.jpg 1200w, media/about/tas3d-2025-hall-2400.jpg 2400w" sizes="(max-width:900px) 100vw, 75vw" alt="TAS3D 2025, Central Asian University" width="2400" height="1601"></figure>
-        <p class="big" data-t="ab.big"><b>TAS3D</b> — конференция в <b>Ташкенте</b><sup>(UZ)</sup> о <b>3D-визуализации в архитектуре</b>. Один день докладов, мастер-классов и разговоров о том, как изображение помогает проекту: от первого эскиза до презентации заказчику. Для <b>архитекторов, визуализаторов, дизайнеров</b> и <span class="acc">девелоперов.</span></p>
+        <p class="big" data-t="ab.big"><b>TAS3D</b> — форум в <b>Ташкенте</b><sup>(UZ)</sup> о <b>3D-визуализации в архитектуре</b>. Один день докладов, мастер-классов и разговоров о том, как изображение помогает проекту: от первого эскиза до презентации заказчику. Для <b>архитекторов, визуализаторов, дизайнеров</b> и <span class="acc">девелоперов.</span></p>
         <div class="prose">
-        <p data-t="ab.p1">TAS3D — передовая и одна из крупнейших конференций в области архитектурной визуализации и искусственного интеллекта. Каждый год мы собираем визуализаторов, архитекторов, дизайнеров, 3D-художников и разработчиков, чтобы обсудить, куда движется индустрия и как новые технологии меняют профессию уже сегодня.</p>
+        <p data-t="ab.p1">TAS3D — передовой и один из крупнейших форумов в области архитектурной визуализации и искусственного интеллекта. Каждый год мы собираем визуализаторов, архитекторов, дизайнеров, 3D-художников и разработчиков, чтобы обсудить, куда движется индустрия и как новые технологии меняют профессию уже сегодня.</p>
         <p data-t="ab.p2">На TAS3D вы узнаете, как нейросети ускоряют работу над проектами, какие инструменты рендеринга и real-time визуализации задают тренды, и как превратить навыки в успешную карьеру или собственную студию. Спикеры — практики мирового уровня, которые делятся реальными кейсами, рабочими процессами и секретами мастерства, а не теорией.</p>
         <p data-t="ab.p3">Это больше, чем лекции. Это живое общение, нетворкинг с лидерами индустрии, мастер-классы, разбор портфолио и возможность найти единомышленников, клиентов и партнёров.</p>
       </div>
@@ -749,7 +760,7 @@ body{background:var(--bg)}
       <button class="gi" type="button" data-i="15" data-full="media/archive-2025/16-cr5-1710.jpg"><img src="media/archive-2025/thumb/16-cr5-1710.jpg" alt="Общее фото участников TAS3D 2025" width="720" height="480" loading="lazy"></button>
     </section>
     <p class="amore"><a href="https://drive.google.com/drive/folders/1lZOJY6GOSNlPPcEypep-JzIY0N3KchkF" target="_blank" rel="noopener" data-t="ar.more">Посмотреть все →</a></p>
-    <div class="foot"><a href="#home" data-t="ar.back">← Конференция 2026</a><span>© 2026 TAS3D</span></div>
+    <div class="foot"><a href="#home" data-t="ar.back">← Форум 2026</a><span>© 2026 TAS3D</span></div>
   </main>
 </div>
 
@@ -770,31 +781,31 @@ body{background:var(--bg)}
 (function () {
   var P = function (s) { return '<span class="ph-in">' + s + '</span>'; };
   window.TAS3D_I18N = {
-    'brand.sub':['Architecture visualisation conference','Arxitektura vizualizatsiyasi konferensiyasi'],
-    'nav.home':['Conference','Konferensiya'],'nav.about':['About','Tadbir haqida'],'nav.contacts':['Contacts','Kontaktlar'],
-    'h.lead':['A conference on 3D visualisation in architecture. For architects, visualisers, designers and developers.','Arxitekturada 3D-vizualizatsiya bo‘yicha konferensiya. Arxitektorlar, vizualizatorlar, dizaynerlar va developerlar uchun.'],
+    'brand.sub':['Architecture visualisation forum','Arxitektura vizualizatsiyasi forumi'],
+    'nav.home':['Forum','Forum'],'nav.about':['About','Tadbir haqida'],'nav.contacts':['Contacts','Kontaktlar'],
+    'h.lead':['A forum on 3D visualisation in architecture. For architects, visualisers, designers and developers.','Arxitekturada 3D-vizualizatsiya bo‘yicha forum. Arxitektorlar, vizualizatorlar, dizaynerlar va developerlar uchun.'],
     'h.date.l':['Date','Sana'],'h.date.v':['03.12.2026','03.12.2026'],
     'h.place.l':['Venue','Joy'],'h.place.v':['Tashkent, '+P('[venue]'),'Toshkent, '+P('[joy]')],
     'h.format.l':['Format','Format'],'h.format.v':['Offline','Oflayn'],
     'h.reg':['Register →','Ro‘yxatdan o‘tish →'],
     'arch.label':['TAS3D 2025 — archive','TAS3D 2025 — arxiv'],
     'ph.photo':['Photo','Surat'],'ph.video':['Video','Video'],
-    'w1.t':['Conference photos','Konferensiya suratlari'],'w1.tags':['Photos · '+P('[N]')+' shots','Suratlar · '+P('[N]')+' ta'],
-    'w2.t':['Conference video','Konferensiya videosi'],'w2.tags':['Video · '+P('[duration]'),'Video · '+P('[davomiyligi]')],
+    'w1.t':['Forum photos','Forum suratlari'],'w1.tags':['Photos · '+P('[N]')+' shots','Suratlar · '+P('[N]')+' ta'],
+    'w2.t':['Forum video','Forum videosi'],'w2.tags':['Video · '+P('[duration]'),'Video · '+P('[davomiyligi]')],
     'hello.l':['Registration','Ro‘yxatdan o‘tish'],'hello.h':['Registration','Ro‘yxatdan o‘tish'],
     'hello.p':['Places are limited. Fill in a short form and we’ll send you a confirmation and the day’s programme.','Joylar cheklangan. Qisqa shaklni to‘ldiring, biz tasdiq va kun dasturini yuboramiz.'],
     'hello.cta':['Register →','Ro‘yxatdan o‘tish →'],
     'c.phone':['+998 '+P('[number]'),'+998 '+P('[raqam]')],
     'city':['Tashkent','Toshkent'],
     'ab.title':['About','Tadbir haqida'],
-    'ab.big':['<b>TAS3D</b> is a conference in <b>Tashkent</b><sup>(UZ)</sup> on <b>3D visualisation in architecture</b>. One day of talks, workshops and conversations about how images help a project, from the first sketch to the client presentation. For <b>architects, visualisers, designers</b> and <span class="acc">developers.</span>',
-      '<b>TAS3D</b> — <b>Toshkent</b><sup>(UZ)</sup>dagi <b>arxitekturada 3D-vizualizatsiya</b> bo‘yicha konferensiya. Birinchi eskizdan buyurtmachiga taqdimotgacha tasvir loyihaga qanday yordam berishi haqida bir kunlik ma’ruzalar, master-klasslar va suhbatlar. <b>Arxitektorlar, vizualizatorlar, dizaynerlar</b> va <span class="acc">developerlar uchun.</span>'],
+    'ab.big':['<b>TAS3D</b> is a forum in <b>Tashkent</b><sup>(UZ)</sup> on <b>3D visualisation in architecture</b>. One day of talks, workshops and conversations about how images help a project, from the first sketch to the client presentation. For <b>architects, visualisers, designers</b> and <span class="acc">developers.</span>',
+      '<b>TAS3D</b> — <b>Toshkent</b><sup>(UZ)</sup>dagi <b>arxitekturada 3D-vizualizatsiya</b> bo‘yicha forum. Birinchi eskizdan buyurtmachiga taqdimotgacha tasvir loyihaga qanday yordam berishi haqida bir kunlik ma’ruzalar, master-klasslar va suhbatlar. <b>Arxitektorlar, vizualizatorlar, dizaynerlar</b> va <span class="acc">developerlar uchun.</span>'],
     'ab.who':['Who it’s for','Kimlar uchun'],
-    'who.1':['Architects','Arxitektorlar'],'who.1d':['You present projects to clients and want to do it better','Loyihani buyurtmachiga ko‘rsatasiz va buni yanada kuchliroq qilmoqchisiz'],
-    'who.2':['3D visualisers','3D-vizualizatorlar'],'who.2d':['You’re looking for new techniques, tools and people in the industry','Yangi usullar, vositalar va soha odamlarini izlaysiz'],
-    'who.3':['Designers','Dizaynerlar'],'who.3d':['Interior and landscape: you want to understand the visualisation pipeline','Interyer va landshaft: vizualizatsiya jarayonini tushunmoqchisiz'],
-    'who.4':['Developers','Developerlar'],'who.4d':['You sign off on visuals and want to know what’s possible','Vizuallar bo‘yicha qaror qabul qilasiz va nimaga erishish mumkinligini bilmoqchisiz'],
-    'who.5':['Students','Talabalar'],'who.5d':['You want to see what the work looks like after graduation','O‘qishdan keyingi ish qanday ko‘rinishini bilmoqchisiz'],
+    'who.1':['Architects','Arxitektorlar'],'who.1d':['Architects need to know what’s happening in visualisation and graphics: it shapes how the client sees the project. You’ll learn which tools and neural networks studios already use and how to get from a sketch to a convincing image faster. And you can find visualisers for your projects.','Arxitektor uchun vizualizatsiya va grafika sohasida nimalar bo‘layotganini tushunish muhim: buyurtmachi loyihani qanday ko‘rishi shunga bog‘liq. Studiyalar qaysi vositalar va neyrotarmoqlardan foydalanayotganini hamda eskizdan ishonarli tasvirga qanday tezroq o‘tishni bilib olasiz. Loyihalaringiz uchun vizualizatorlarni ham topishingiz mumkin.'],
+    'who.2':['3D visualisers','3D-vizualizatorlar'],'who.2d':['This is where people who make visualisation every day get together. You’ll see how strong studios work and which techniques and tools they use, and understand where the profession is heading. It’s also a chance to meet colleagues and clients in person.','Bu yerda har kuni vizualizatsiya bilan shug‘ullanadiganlar yig‘iladi. Kuchli studiyalar qanday ishlashini, qaysi usul va vositalardan foydalanishini ko‘rasiz va kasb qayerga ketayotganini tushunasiz. Bundan tashqari, bu hamkasblar va buyurtmachilar bilan jonli tanishish imkoniyati.'],
+    'who.3':['Designers','Dizaynerlar'],'who.3d':['Interior and landscape designers need to understand how a project becomes an image and what affects the result. You’ll see the whole visualisation process: model, materials, light and final presentation. It helps you brief a visualiser more precisely or make the visuals yourself.','Interyer va landshaft dizayneri uchun loyiha qanday qilib tasvirga aylanishini va natijaga nima ta’sir qilishini tushunish muhim. Vizualizatsiyaning butun jarayonini ko‘rasiz: model, materiallar, yorug‘lik va yakuniy taqdimot. Bu vizualizatorga vazifani aniqroq qo‘yishga yoki vizualni o‘zingiz yaratishga yordam beradi.'],
+    'who.4':['Developers','Developerlar'],'who.4d':['Visualisation sells a project before it’s built. You’ll learn which formats work today, from still renders to real-time and animation, and what to look for when choosing a contractor. That makes decisions about a project’s visuals more confident.','Vizualizatsiya loyihani u qurilmasidan oldin sotadi. Hozir qaysi formatlar ishlashini, statik renderlardan real-time va animatsiyagacha, hamda pudratchini tanlashda nimaga e’tibor berishni bilib olasiz. Shunda loyiha vizuali bo‘yicha qarorlar ishonchliroq bo‘ladi.'],
+    'who.5':['Students','Talabalar'],'who.5d':['Studies give you the basics, but it’s better to see the industry with your own eyes. Practitioners will show how real projects work and where to start a career. You can also meet studios here and make your first contacts in the profession.','O‘qish asos beradi, lekin sohadagi ishni o‘z ko‘zingiz bilan ko‘rgan ma’qul. Amaliyotchilar real loyihalar qanday tuzilganini va karyerani nimadan boshlashni aytib beradi. Bu yerda studiyalar bilan tanishib, kasbdagi ilk aloqalarni topishingiz mumkin.'],
     'ab.format':['The day','Kun formati'],
     'fm1.h':['Talks','Ma’ruzalar'],'fm1.p':['Practitioners show finished projects and explain how they got there.','Amaliyotchilar tayyor loyihalarni ko‘rsatib, natijaga qanday erishganini aytib beradi.'],
     'fm2.h':['Workshops','Master-klasslar'],'fm2.p':['Short sessions on tools and techniques. Topics: '+P('[tbc]'),'Vositalar va usullar bo‘yicha qisqa mashg‘ulotlar. Mavzular: '+P('[aniqlanadi]')],
@@ -806,17 +817,20 @@ body{background:var(--bg)}
     'r.panel':['Panel discussion','Panel muhokama'],'r.panelp':[P('[panellists]'),P('[ishtirokchilar]')],'r.net':['Networking','Netvorking'],'r.close':['Close','Yakun'],
     'ab.spk':['Speakers','Spikerlar'],'spk.n':['First Last','Ism Familiya'],'spk.r':['Role, company','Lavozim, kompaniya'],'spk.t':[P('[talk topic]'),P('[ma’ruza mavzusi]')],
     'ab.faq':['FAQ','Savollar'],
-    'faq.q1':['Do I need to register?','Ro‘yxatdan o‘tish shartmi?'],'faq.a1':['Yes. Places are limited, so registration is required. You’ll get a confirmation once we review your application.','Ha. Joylar soni cheklangan, shuning uchun ariza majburiy. Tekshiruvdan so‘ng tasdiq keladi.'],
-    'faq.q2':['How much does it cost?','Ishtirok narxi qancha?'],'faq.a2':[P('[Free / price and what’s included]'),P('[Bepul / narxi va nimalar kiradi]')],
-    'faq.q3':['Can I give a talk?','Ma’ruza bilan chiqish mumkinmi?'],'faq.a3':['Yes. Send your topic and a short project description through the registration form. We’ll reply by '+P('[deadline]')+'.','Ha. Mavzu va loyihaning qisqacha tavsifini ariza shakli orqali yuboring. Javob '+P('[muddat]')+'gacha keladi.'],
-    'faq.q4':['Will there be a certificate?','Sertifikat beriladimi?'],'faq.a4':[P('[Yes / no]'),P('[Ha / yo‘q]')],
-    'faq.q5':['Is it suitable for beginners?','Yangi boshlovchilarga mos keladimi?'],'faq.a5':['Yes. The programme includes introductory talks and workshops for those just starting out.','Ha. Dasturda endi boshlayotganlar uchun kirish ma’ruzalari va master-klasslar bor.'],
+    'faq.q1':['Do I need to register?','Ro‘yxatdan o‘tish shartmi?'],'faq.a1':['Yes. Places are limited, so registration is required.','Ha. Joylar soni cheklangan, shuning uchun ro‘yxatdan o‘tish majburiy.'],
+    'faq.q2':['How much does it cost?','Ishtirok narxi qancha?'],'faq.a2':['It’s free. You only need to register.','Bepul. Faqat ro‘yxatdan o‘tish kerak.'],
+    'faq.q3':['Is it suitable for beginners?','Yangi boshlovchilarga mos keladimi?'],'faq.a3':['Yes. TAS3D is for everyone, from those just starting out to people who have been in the profession for years.','Ha. TAS3D hammaga mos: endi boshlayotganlarga ham, kasbda ko‘p yillardan beri ishlayotganlarga ham.'],
+    'faq.q4':['Can I talk to the speakers in person and ask questions?','Spiker bilan shaxsan suhbatlashib, savol berish mumkinmi?'],'faq.a4':['Of course. There is a coffee break in the programme: the speakers spend it with the forum participants, so you can come up and ask your question.','Albatta. Dasturda kofe-breyk bor: bu vaqtda spikerlar forum ishtirokchilari bilan muloqot qiladi, ularga yaqinlashib savol berishingiz mumkin.'],
+    'faq.q5':['How long will TAS3D 2026 last?','TAS3D 2026 qancha davom etadi?'],'faq.a5':['About 4–6 hours.','Taxminan 4–6 soat.'],
+    'faq.q6':['What language will the forum be in?','Forum qaysi tilda o‘tadi?'],'faq.a6':['Russian and English. Talks by English-speaking speakers will be interpreted.','Rus va ingliz tillarida. Ingliz tilida so‘zlovchi spikerlarning ma’ruzalari tarjimon bilan bo‘ladi.'],
+    'faq.q7':['Do I need to bring anything?','O‘zim bilan biror narsa olib kelishim kerakmi?'],'faq.a7':['Just your QR code. Luma will send it to you after you register: save it and show it at the entrance. Nothing else is needed, just come.','Faqat QR-kod. Ro‘yxatdan o‘tganingizdan so‘ng Luma uni sizga yuboradi: saqlab qo‘ying va kirishda ko‘rsating. Boshqa hech narsa kerak emas, asosiysi o‘zingiz keling.'],
+    'faq.q8':['Am I a great person?','Men zo‘r odammanmi?'],'faq.a8':['Yes, without a doubt.','Ha, shubhasiz.'],
     'ct.title':['Contacts','Kontaktlar'],'ct.reach':['Get in touch','Bog‘lanish'],'ct.phone':['Phone','Telefon'],'ct.addr':['Address','Manzil'],
     'ct.addrv':['Tashkent, '+P('[venue address]'),'Toshkent, '+P('[joy manzili]')],'ct.coord':['Coordinates','Koordinatalar'],'ct.form':['Registration','Ro‘yxatdan o‘tish'],
     'fm.name':['Full name','Ism va familiya'],'fm.contact':['Phone or email','Telefon yoki email'],'fm.field':['Field','Soha'],'fm.send':['Send application','Arizani yuborish'],
     'o.1':['Architecture','Arxitektura'],'o.2':['3D visualisation','3D-vizualizatsiya'],'o.3':['Interior or landscape design','Interyer yoki landshaft dizayni'],'o.4':['Property development','Development'],'o.5':['Student','Talaba'],'o.6':['Other','Boshqa'],
     'ar.f1':['Attendees','Ishtirokchilar'],'ar.f2':['Talks','Ma’ruzalar'],'ar.f3':['Speakers','Spikerlar'],'ar.f4':['City','Shahar'],
-    'ar.vid':['TAS3D 2025 video','TAS3D 2025 videosi'],'ar.back':['← Conference 2026','← Konferensiya 2026'],
+    'ar.vid':['TAS3D 2025 video','TAS3D 2025 videosi'],'ar.back':['← Forum 2026','← Forum 2026'],
     '_ok':['Форма пока не отправляет данные: нужно подключить обработчик заявок.','The form doesn’t send data yet: an application handler needs to be connected.','Shakl hozircha ma’lumot yubormaydi: arizalarni qabul qiluvchi xizmatni ulash kerak.'],
     '_err':['Заполните имя и контакт.','Fill in your name and contact.','Ism va kontaktni kiriting.']
   };})();
@@ -827,9 +841,9 @@ body{background:var(--bg)}
   Object.assign(window.TAS3D_I18N, {
     'h.place.v': [CAU, CAU, CAU],
     'ct.addrv': [CAU, CAU, CAU],
-    'ab.about': ['About the conference', 'Konferensiya haqida'],
-    'ab.p1': ['TAS3D is one of the largest conferences on architectural visualisation and artificial intelligence. Every year we bring together visualisers, architects, designers, 3D artists and developers to discuss where the industry is heading and how new technologies are changing the profession today.',
-              'TAS3D — arxitektura vizualizatsiyasi va sun’iy intellekt bo‘yicha eng yirik konferensiyalardan biri. Har yili biz vizualizatorlar, arxitektorlar, dizaynerlar, 3D-rassomlar va dasturchilarni yig‘amiz: soha qayerga ketayotgani va yangi texnologiyalar kasbni bugunning o‘zida qanday o‘zgartirayotganini muhokama qilish uchun.'],
+    'ab.about': ['About the forum', 'Forum haqida'],
+    'ab.p1': ['TAS3D is one of the largest forums on architectural visualisation and artificial intelligence. Every year we bring together visualisers, architects, designers, 3D artists and developers to discuss where the industry is heading and how new technologies are changing the profession today.',
+              'TAS3D — arxitektura vizualizatsiyasi va sun’iy intellekt bo‘yicha eng yirik forumlardan biri. Har yili biz vizualizatorlar, arxitektorlar, dizaynerlar, 3D-rassomlar va dasturchilarni yig‘amiz: soha qayerga ketayotgani va yangi texnologiyalar kasbni bugunning o‘zida qanday o‘zgartirayotganini muhokama qilish uchun.'],
     'ab.p2': ['At TAS3D you will learn how neural networks speed up project work, which rendering and real-time visualisation tools set the trends, and how to turn your skills into a successful career or your own studio. The speakers are world-class practitioners who share real cases, workflows and craft secrets, not theory.',
               'TAS3D da neyrotarmoqlar loyihalar ustidagi ishni qanday tezlashtirishini, qaysi render va real-time vizualizatsiya vositalari trend belgilayotganini hamda ko‘nikmalarni muvaffaqiyatli karyera yoki o‘z studiyangizga qanday aylantirish mumkinligini bilib olasiz. Spikerlar — nazariya emas, balki real keyslar, ish jarayonlari va mahorat sirlarini ulashadigan jahon darajasidagi amaliyotchilar.'],
     'ab.p3': ['It is more than lectures. It is live conversation, networking with industry leaders, workshops, portfolio reviews and the chance to find like-minded people, clients and partners.',
