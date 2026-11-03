@@ -508,6 +508,8 @@ body{background:var(--bg)}
 .tbd{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px clamp(16px,2vw,32px);border-top:1px solid var(--fg);padding-top:clamp(18px,1.8vw,28px)}
 .tbd-k{font-size:clamp(44px,5vw,88px);line-height:.9;letter-spacing:-.05em}
 .tbd-t{font-size:clamp(17px,1.5vw,24px);letter-spacing:-.01em;color:var(--mute)}
+.sp-ph.sp-tbd{background:#0e0e0e;display:flex;align-items:flex-end;padding:clamp(16px,1.8vw,28px)}
+.sp-ph.sp-tbd span{font-size:clamp(48px,6vw,104px);line-height:.85;letter-spacing:-.05em;color:#f4f4f2}
 </style>
 </head>
 <body>
@@ -581,7 +583,12 @@ body{background:var(--bg)}
 
     <section class="blk g12">
       <p class="k" data-t="ab.format">Формат дня</p>
-      <div class="v tbd"><p class="tbd-k">TBD</p><p class="tbd-t" data-t="tbd">Скоро объявим</p></div>
+      <div class="v four">
+        <article><h3>TBD</h3><p data-t="tbd">Скоро объявим</p></article>
+        <article><h3>TBD</h3><p data-t="tbd">Скоро объявим</p></article>
+        <article><h3>TBD</h3><p data-t="tbd">Скоро объявим</p></article>
+        <article><h3>TBD</h3><p data-t="tbd">Скоро объявим</p></article>
+      </div>
     </section>
     <template id="tpl-format">
     <section class="blk g12">
@@ -597,7 +604,13 @@ body{background:var(--bg)}
 
     <section class="blk g12">
       <p class="k" data-t="ab.prog">Программа</p>
-      <div class="v tbd"><p class="tbd-k">TBD</p><p class="tbd-t" data-t="tbd">Скоро объявим</p></div>
+      <div class="v rows">
+        <div class="row"><span class="t">--:--</span><span class="n">TBD</span><span class="p" data-t="tbd">Скоро объявим</span></div>
+        <div class="row"><span class="t">--:--</span><span class="n">TBD</span><span class="p" data-t="tbd">Скоро объявим</span></div>
+        <div class="row"><span class="t">--:--</span><span class="n">TBD</span><span class="p" data-t="tbd">Скоро объявим</span></div>
+        <div class="row"><span class="t">--:--</span><span class="n">TBD</span><span class="p" data-t="tbd">Скоро объявим</span></div>
+        <div class="row"><span class="t">--:--</span><span class="n">TBD</span><span class="p" data-t="tbd">Скоро объявим</span></div>
+      </div>
     </section>
     <template id="tpl-program">
     <section class="blk g12">
@@ -615,9 +628,14 @@ body{background:var(--bg)}
     </section>
     </template>
 
-    <section class="blk g12">
+    <section class="blk g12 spk-blk">
       <p class="k" data-t="ab.spk">Спикеры</p>
-      <div class="v tbd"><p class="tbd-k">TBD</p><p class="tbd-t" data-t="tbd">Скоро объявим</p></div>
+      <div class="spk2">
+        <article class="sp"><div class="sp-ph sp-tbd"><span>TBD</span></div><h3>TBD</h3><p class="sp-r" data-t="tbd">Скоро объявим</p></article>
+        <article class="sp"><div class="sp-ph sp-tbd"><span>TBD</span></div><h3>TBD</h3><p class="sp-r" data-t="tbd">Скоро объявим</p></article>
+        <article class="sp"><div class="sp-ph sp-tbd"><span>TBD</span></div><h3>TBD</h3><p class="sp-r" data-t="tbd">Скоро объявим</p></article>
+        <article class="sp"><div class="sp-ph sp-tbd"><span>TBD</span></div><h3>TBD</h3><p class="sp-r" data-t="tbd">Скоро объявим</p></article>
+      </div>
     </section>
     <template id="tpl-speakers">
     <section class="blk g12 spk-blk">
