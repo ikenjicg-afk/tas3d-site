@@ -462,35 +462,60 @@ body{background:var(--bg)}
 .sp-r{margin-top:8px;font-size:clamp(16px,1.3vw,20px);color:var(--mute)}
 .sp-t{margin-top:6px;font-size:15px;color:var(--mute)}
 @media (max-width:900px){ .spk2{grid-template-columns:1fr} }
-/* notch countdown */
-.notch{position:fixed;top:0;left:50%;transform:translateX(-50%);z-index:60;display:flex;align-items:center;gap:clamp(12px,1.2vw,18px);padding:calc(7px + env(safe-area-inset-top,0px)) 20px 8px;background:#0b0b0b;color:#f4f4f2;border-radius:0 0 16px 16px;font-variant-numeric:tabular-nums;text-decoration:none}
-.notch::before,.notch::after{content:"";position:absolute;top:0;width:14px;height:14px;pointer-events:none}
-.notch::before{left:-14px;background:radial-gradient(circle at 0 100%,transparent 13.5px,#0b0b0b 14px)}
-.notch::after{right:-14px;background:radial-gradient(circle at 100% 100%,transparent 13.5px,#0b0b0b 14px)}
-.n-live{width:7px;height:7px;border-radius:50%;background:var(--orange);animation:nlive 2s ease-in-out infinite}
-@keyframes nlive{50%{opacity:.25}}
-.nd{display:grid;justify-items:center;gap:3px;min-width:2.2ch}
-.nd b{font-weight:500;font-size:19px;line-height:1;letter-spacing:-.01em;display:block}
-.nd i{font-style:normal;font-size:9px;line-height:1;letter-spacing:.08em;text-transform:uppercase;color:#8b8b87}
-.nd b.tk{animation:tk .32s cubic-bezier(.2,.8,.2,1)}
-@keyframes tk{from{transform:translateY(-45%);opacity:.15}}
-.notch:hover .nd b{color:var(--orange)}
-@media (prefers-reduced-motion:reduce){ .n-live,.nd b.tk{animation:none} }
-/* menu stays on columns 9–12 down to tablet, so the notch never covers it */
+.cols-bg i{border-color:var(--line)}
+
+/* v18 */
+/* countdown strip: black band at the very top, scrolls away with the page */
+.cd{position:relative;z-index:4;display:flex;justify-content:center;align-items:flex-start;gap:clamp(10px,1.3vw,22px);margin-left:calc(-1 * var(--pad));margin-right:calc(-1 * var(--padr));padding:calc(12px + env(safe-area-inset-top,0px)) var(--padr) 11px var(--pad);background:#0b0b0b;color:#f4f4f2;font-variant-numeric:tabular-nums}
+.cd-u{display:grid;justify-items:center;gap:6px;min-width:0}
+.cd-n{display:inline-flex;perspective:3em;font-size:clamp(24px,2.3vw,38px);font-weight:500;line-height:.9;letter-spacing:0}
+.cd-n .g{width:.58em}
+.cd-c{font-size:clamp(24px,2.3vw,38px);font-weight:500;line-height:.9;color:#8b8b87;transform:translateY(-.06em)}
+.cd-l{font-size:10px;line-height:1;letter-spacing:.1em;text-transform:uppercase;color:#8b8b87}
+.hv{top:calc(-1 * var(--hv, 110px))}
+/* first screen: title near the top, event facts at the bottom on any screen height */
+.first{display:flex;flex-direction:column}
+.first > .hero{margin-bottom:clamp(64px,8vw,200px)}
+.first > .facts{margin-top:auto}
+/* registration date: smaller, with air under the heading */
+.hello-big .hd{font-size:.36em;margin-top:.8em}
+/* header: brand left, menu on columns 7 and 10, languages at the right edge, one row */
+.head{align-items:center;padding-top:26px}
+.brand{grid-column:1/4;grid-row:1}
+.nav{grid-column:7/12;grid-row:1;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));column-gap:var(--gap);align-items:center}
+.nav a{justify-self:start}
+.nav a:nth-child(1){grid-column:1/4}
+.nav a:nth-child(2){grid-column:4/6}
+.lang{grid-column:11/13;grid-row:1;justify-self:end;align-self:center;margin:0;gap:14px}
 @media (max-width:1199px) and (min-width:901px){
-  .nav{grid-column:9/13}
+  .nav{grid-column:7/12}
   .lang{grid-column:11/13}
 }
 @media (max-width:900px){
-  .head{padding-top:calc(30px + 46px)}
+  .head{padding-top:20px;align-items:center;row-gap:18px}
+  .brand{grid-column:1/7;grid-row:1}
+  .lang{grid-column:7/13;grid-row:1;justify-self:end}
+  .nav{grid-column:1/-1;grid-row:2;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:0;gap:0 var(--gap)}
+  .nav a:nth-child(1){grid-column:1/2;justify-self:start}
+  .nav a:nth-child(2){grid-column:2/3;justify-self:end}
+  .cd{gap:8px;padding-top:calc(10px + env(safe-area-inset-top,0px));padding-bottom:9px}
+  .cd-l{font-size:9px;letter-spacing:.06em}
 }
-.cols-bg i{border-color:var(--line)}
 </style>
 </head>
 <body>
 <div class="cols-bg" aria-hidden="true"><div class="g12"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
 
 <div class="page">
+  <div class="cd" id="cd" role="timer" aria-label="TAS3D 2026: 03.12.2026, 15:00">
+    <div class="cd-u"><span class="cd-n" id="cdD"></span><span class="cd-l" data-t="cd.d">Дней</span></div>
+    <span class="cd-c" aria-hidden="true">:</span>
+    <div class="cd-u"><span class="cd-n" id="cdH"></span><span class="cd-l" data-t="cd.h">Часов</span></div>
+    <span class="cd-c" aria-hidden="true">:</span>
+    <div class="cd-u"><span class="cd-n" id="cdM"></span><span class="cd-l" data-t="cd.m">Минут</span></div>
+    <span class="cd-c" aria-hidden="true">:</span>
+    <div class="cd-u"><span class="cd-n" id="cdS"></span><span class="cd-l" data-t="cd.s">Секунд</span></div>
+  </div>
   <header class="head g12">
     <a class="brand" href="#home">
       <b>TAS3D</b>
@@ -512,8 +537,8 @@ body{background:var(--bg)}
     <div class="first">
     <div class="hv" aria-hidden="true">
       <video class="hv-v" autoplay muted loop playsinline preload="auto" poster="media/tas3d-2025-poster.jpg">
-        <source src="media/tas3d-2025.webm" type="video/webm">
         <source src="media/tas3d-2025.mp4" type="video/mp4">
+        <source src="media/tas3d-2025.webm" type="video/webm">
       </video>
       <div class="hv-ov"></div>
       <div class="hv-cols"></div>
@@ -671,13 +696,6 @@ body{background:var(--bg)}
   </main>
 </div>
 
-<a class="notch" id="notch" href="#register" aria-label="TAS3D 2026: 03.12.2026, 15:00">
-  <span class="n-live" aria-hidden="true"></span>
-  <span class="nd"><b id="nD">--</b><i data-t="cd.d">дн</i></span>
-  <span class="nd"><b id="nH">--</b><i data-t="cd.h">ч</i></span>
-  <span class="nd"><b id="nM">--</b><i data-t="cd.m">мин</i></span>
-  <span class="nd"><b id="nS">--</b><i data-t="cd.s">сек</i></span>
-</a>
 <div class="cursor" aria-hidden="true"><span></span></div>
 <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="TAS3D 2025">
   <img class="lb-img" id="lbImg" alt="">
@@ -793,7 +811,7 @@ body{background:var(--bg)}
     'ar.more': ['All 121 photos on Google Drive →', 'Barcha 121 ta surat Google Drive’da →'],
     // v17
     'ar.v2': ['5 hours', '5 soat'],
-    'cd.d': ['days', 'kun'], 'cd.h': ['hrs', 'soat'], 'cd.m': ['min', 'daq'], 'cd.s': ['sec', 'son'],
+    'cd.d': ['Days', 'Kun'], 'cd.h': ['Hours', 'Soat'], 'cd.m': ['Minutes', 'Daqiqa'], 'cd.s': ['Seconds', 'Soniya'],
     'sp1.n': ['Daniel Nagaets', 'Daniel Nagaets'], 'sp1.r': ['Founder, Rendercamp', 'Rendercamp asoschisi'],
     'sp2.n': ['Artem Kupriianenko', 'Artem Kupriianenko'], 'sp2.r': ['Founder, Omegarender', 'Omegarender asoschisi'],
     'sp3.r': [P('[speaker name, role]'), P('[spiker ismi, lavozimi]')],
@@ -850,6 +868,7 @@ body{background:var(--bg)}
   function pin() {
     var hd = document.querySelector('.head');
     root.style.setProperty('--hh', (hd.offsetTop + hd.offsetHeight) + 'px');
+    root.style.setProperty('--hv', hd.offsetHeight + 'px');
     document.querySelectorAll('.lt').forEach(function (lt) {
       if (lt.offsetParent !== null) lt.style.setProperty('--lh', lt.offsetHeight + 'px');
     });
@@ -866,6 +885,16 @@ body{background:var(--bg)}
         else hvv.pause();
       }).observe(hvv);
     }
+    // some browsers stop a looping muted video at the end or when power saving kicks in: start it again while it is on screen
+    var still0 = window.matchMedia('(prefers-reduced-motion: reduce)');
+    function hvResume() {
+      if (still0.matches || current !== 'home' || document.hidden || !hvv.paused) return;
+      var r = hvv.getBoundingClientRect(); if (r.bottom <= 0 || r.top >= window.innerHeight) return;
+      var pr = hvv.play(); if (pr && pr.catch) pr.catch(function () {});
+    }
+    hvv.addEventListener('ended', function () { hvv.currentTime = 0; hvResume(); });
+    document.addEventListener('visibilitychange', hvResume);
+    setInterval(hvResume, 1500);
   }
   function layer() {
     root.style.setProperty('--pg', '0');
@@ -1052,26 +1081,43 @@ body{background:var(--bg)}
     WC = {}; sizeHero(); show(BRAND); ink(BRAND); inkLeftAll();
     if (current !== 'home') fitTitle(current);
     if (!reduce.matches) hcells.forEach(function (c, i) { if (c.ch) setTimeout(function () { flipTo(c, c.ch, 3 + (i % 3), 110); }, 150 + i * 70); });
+    cdIntro();
   }
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(startFlaps); else startFlaps();
   window.addEventListener('resize', function () { inkLeftAll(); sizeHero(); ink(BRAND); if (current !== 'home') fitTitle(current); });
   window.addEventListener('hashchange', function () { if (current === 'home') { sizeHero(); ink(BRAND); } });
 
-  // Countdown in the notch: days, hours, minutes, seconds to 03.12.2026, 15:00 Tashkent
-  var notch = document.getElementById('notch'), nB = ['nD', 'nH', 'nM', 'nS'].map(function (id) { return document.getElementById(id); });
-  function notchTick() {
+  // Countdown strip at the top of the page: digits flip like the TAS3D 2026 title
+  var cdEl = document.getElementById('cd');
+  var cdBox = ['cdD', 'cdH', 'cdM', 'cdS'].map(function (id) { return document.getElementById(id); });
+  var cdCells = [[], [], [], []];
+  function cdSet(i, str, anim) {
+    var box = cdBox[i], cells = cdCells[i];
+    while (cells.length < str.length) { var g = document.createElement('span'); g.className = 'g'; box.insertBefore(g, box.firstChild); cells.unshift({ g: g, ch: '', pool: DIG }); }
+    while (cells.length > str.length) { box.removeChild(cells.shift().g); }
+    cells.forEach(function (c, k) {
+      var ch = str.charAt(k); if (c.ch === ch) return;
+      c.ch = ch; c.final = ch;
+      if (!anim) { c.g.textContent = ch; return; }
+      flip(c, ch, 110);
+    });
+  }
+  function cdTick(anim) {
     var ms = START - Date.now();
-    if (ms <= 0) { notch.hidden = true; return; }
+    if (ms <= 0) { cdEl.hidden = true; return; }
     var t = Math.floor(ms / 1000), d = Math.floor(t / 86400); t -= d * 86400;
     var h = Math.floor(t / 3600); t -= h * 3600;
     var m = Math.floor(t / 60); t -= m * 60;
-    [String(d), two(h), two(m), two(t)].forEach(function (v, i) {
-      var b = nB[i]; if (b.textContent === v) return;
-      b.textContent = v;
-      if (!reduce.matches) { b.classList.remove('tk'); void b.offsetWidth; b.classList.add('tk'); }
-    });
+    var on = anim && !reduce.matches && !document.hidden && cdEl.getBoundingClientRect().bottom > 0;
+    [String(d), two(h), two(m), two(t)].forEach(function (v, i) { cdSet(i, v, on); });
   }
-  notchTick(); setInterval(notchTick, 250);
+  cdTick(false);
+  setInterval(function () { cdTick(true); }, 250);
+  function cdIntro() {
+    if (reduce.matches) return;
+    var n = 0;
+    cdCells.forEach(function (cells) { cells.forEach(function (c) { var k = n++; setTimeout(function () { roll(c, 2 + (k % 3)); }, 200 + k * 60); }); });
+  }
 
   // Subpage titles flap like the home title (letters of the title only; the year stays static)
   var POOLS = {};
