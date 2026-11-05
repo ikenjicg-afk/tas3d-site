@@ -530,7 +530,7 @@ body{background:var(--bg)}
 
 /* v22: logo in the header; gallery (album heading + photo rows of different widths); 6 speakers, 3 per row */
 .brand .logo{display:block;width:clamp(104px,9vw,164px);aspect-ratio:900/212;background-color:currentColor;-webkit-mask:url(media/logo-tas3d.png) center/contain no-repeat;mask:url(media/logo-tas3d.png) center/contain no-repeat}
-.gal-h{margin-top:clamp(44px,5.4vw,92px);font-size:clamp(24px,2.5vw,42px);font-weight:700;letter-spacing:-.035em;line-height:1}
+.gal-h{margin-top:clamp(60px,6vw,100px);font-size:clamp(24px,2.5vw,42px);font-weight:700;letter-spacing:-.035em;line-height:1}
 /* rows: every tile has the same height; its width follows --ar (tile shape), and the row stretches to the full width */
 .agal{--rh:calc((100vw - var(--pad) - var(--padr) - 2 * var(--gap)) / 4.4);display:flex;flex-wrap:wrap;gap:var(--gap);margin-top:clamp(32px,4vw,64px)}
 .agal::after{content:"";flex:999 1 0}
@@ -752,6 +752,19 @@ body{background:var(--bg)}
   <!-- GALLERY -->
   <main class="view" data-view="gallery" hidden>
     <h2 class="ptitle"><span class="pt" data-t="ar.title">Галерея</span></h2>
+    <section class="afacts g12">
+      <div><p class="lab" data-t="ar.f1">Участников</p><p class="val">250–350</p></div>
+      <div><p class="lab" data-t="ar.f2">Доклады</p><p class="val" data-t="ar.v2">5 часов</p></div>
+      <div><p class="lab" data-t="ar.f3">Спикеров</p><p class="val">8</p></div>
+      <div><p class="lab" data-t="ar.f4">Город</p><p class="val" data-t="city">Ташкент</p></div>
+    </section>
+    <section class="avid">
+      <a class="yt" href="https://www.youtube.com/watch?v=5wCIuZO7chs&amp;t=33s" target="_blank" rel="noopener">
+        <img src="media/archive-2025/youtube-cover.jpg" alt="TAS3D 2025 Film" width="1280" height="720">
+        <span class="play" aria-hidden="true"></span>
+        <span class="yt-l"><span data-t="ar.vid">Фильм TAS3D 2025</span><span>YouTube →</span></span>
+      </a>
+    </section>
     <section class="gal" aria-label="TAS3D 2025 Tashkent">
       <h3 class="gal-h" data-t="gal.h">TAS3D 2025 Ташкент</h3>
       <div class="agal">
@@ -771,21 +784,28 @@ body{background:var(--bg)}
       <button class="gi" type="button" data-i="13" data-full="media/archive-2025/02-cr5-1562.jpg" style="--ar:0.8;--op:65% 50%"><img src="media/archive-2025/thumb/02-cr5-1562.jpg" alt="Спикер на сцене" width="1100" height="733" loading="lazy"></button>
       <button class="gi" type="button" data-i="14" data-full="media/archive-2025/14-cr6-0188.jpg" style="--ar:1.7"><img src="media/archive-2025/thumb/14-cr6-0188.jpg" alt="Слайд «Viz o‘zi nima?»" width="1100" height="733" loading="lazy"></button>
       <button class="gi" type="button" data-i="15" data-full="media/archive-2025/16-cr5-1710.jpg" style="--ar:1.78;--op:50% 70%"><img src="media/archive-2025/thumb/16-cr5-1710.jpg" alt="Общее фото участников TAS3D 2025" width="1100" height="733" loading="lazy"></button>
+      <button class="gi" type="button" data-i="16" data-full="media/archive-2025/17-cr5-1630.jpg" style="--ar:1.5"><img src="media/archive-2025/thumb/17-cr5-1630.jpg" alt="Слайд со спикером на большом экране" width="1100" height="734" loading="lazy"></button>
+      <button class="gi" type="button" data-i="17" data-full="media/archive-2025/18-cr6-0083.jpg" style="--ar:0.8;--op:55% 50%"><img src="media/archive-2025/thumb/18-cr6-0083.jpg" alt="Спикер на сцене у экрана Archiquad" width="1100" height="734" loading="lazy"></button>
+      <button class="gi" type="button" data-i="18" data-full="media/archive-2025/19-cr5-1540.jpg" style="--ar:1.78"><img src="media/archive-2025/thumb/19-cr5-1540.jpg" alt="Зрители в зале" width="1100" height="734" loading="lazy"></button>
+      <button class="gi" type="button" data-i="19" data-full="media/archive-2025/20-cr5-1648.jpg" style="--ar:1.33;--op:56% 50%"><img src="media/archive-2025/thumb/20-cr5-1648.jpg" alt="Онлайн-включение спикера на экране" width="1100" height="734" loading="lazy"></button>
+      <button class="gi" type="button" data-i="20" data-full="media/archive-2025/21-cr5-1679.jpg" style="--ar:1.5"><img src="media/archive-2025/thumb/21-cr5-1679.jpg" alt="Вручение подарков на сцене" width="1100" height="734" loading="lazy"></button>
+      <button class="gi" type="button" data-i="21" data-full="media/archive-2025/22-cr5-1629.jpg" style="--ar:1.33;--op:60% 50%"><img src="media/archive-2025/thumb/22-cr5-1629.jpg" alt="Доклад «Flat Shot vs Immersion»" width="1100" height="734" loading="lazy"></button>
+      <button class="gi" type="button" data-i="22" data-full="media/archive-2025/23-cr6-0113.jpg" style="--ar:0.8;--op:42% 50%"><img src="media/archive-2025/thumb/23-cr6-0113.jpg" alt="Вопрос спикеру из зала" width="1100" height="734" loading="lazy"></button>
+      <button class="gi" type="button" data-i="23" data-full="media/archive-2025/24-cr5-1612.jpg" style="--ar:1.5"><img src="media/archive-2025/thumb/24-cr5-1612.jpg" alt="Презентация Archiquad в зале" width="1100" height="734" loading="lazy"></button>
+      <button class="gi" type="button" data-i="24" data-full="media/archive-2025/25-cr6-0156.jpg" style="--ar:0.8;--op:46% 50%"><img src="media/archive-2025/thumb/25-cr6-0156.jpg" alt="Зрители и вопрос из зала" width="1100" height="734" loading="lazy"></button>
+      <button class="gi" type="button" data-i="25" data-full="media/archive-2025/26-cr5-1622.jpg" style="--ar:1;--op:66% 50%"><img src="media/archive-2025/thumb/26-cr5-1622.jpg" alt="Слайд о визуализаторе на экране" width="1100" height="734" loading="lazy"></button>
+      <button class="gi" type="button" data-i="26" data-full="media/archive-2025/27-cr5-1536.jpg" style="--ar:1.78"><img src="media/archive-2025/thumb/27-cr5-1536.jpg" alt="Полный зал Central Asian University" width="1100" height="734" loading="lazy"></button>
+      <button class="gi" type="button" data-i="27" data-full="media/archive-2025/28-cr5-1685.jpg" style="--ar:1.5"><img src="media/archive-2025/thumb/28-cr5-1685.jpg" alt="Вручение подарков участницам" width="1100" height="734" loading="lazy"></button>
+      <button class="gi" type="button" data-i="28" data-full="media/archive-2025/29-cr6-0183.jpg" style="--ar:0.8;--op:42% 50%"><img src="media/archive-2025/thumb/29-cr6-0183.jpg" alt="Спикер на сцене, слайд QILIN" width="1100" height="734" loading="lazy"></button>
+      <button class="gi" type="button" data-i="29" data-full="media/archive-2025/30-cr5-1699.jpg" style="--ar:1.2"><img src="media/archive-2025/thumb/30-cr5-1699.jpg" alt="Онлайн-включение спикера в наушниках" width="1100" height="734" loading="lazy"></button>
+      <button class="gi" type="button" data-i="30" data-full="media/archive-2025/31-cr6-0245.jpg" style="--ar:1.2"><img src="media/archive-2025/thumb/31-cr6-0245.jpg" alt="Вручение подарка участнику" width="1100" height="906" loading="lazy"></button>
+      <button class="gi" type="button" data-i="31" data-full="media/archive-2025/32-cr5-1641.jpg" style="--ar:0.8;--op:50% 50%"><img src="media/archive-2025/thumb/32-cr5-1641.jpg" alt="Слайд «Дерзайте» на сцене" width="1100" height="734" loading="lazy"></button>
+      <button class="gi" type="button" data-i="32" data-full="media/archive-2025/33-cr6-0259.jpg" style="--ar:0.9;--op:50% 50%"><img src="media/archive-2025/thumb/33-cr6-0259.jpg" alt="Доклад «Panorama vs 6DOF»" width="1100" height="734" loading="lazy"></button>
+      <button class="gi" type="button" data-i="33" data-full="media/archive-2025/34-cr6-0327.jpg" style="--ar:1.5"><img src="media/archive-2025/thumb/34-cr6-0327.jpg" alt="Доклад в светлом зале" width="1100" height="734" loading="lazy"></button>
+      <button class="gi" type="button" data-i="34" data-full="media/archive-2025/35-cr5-1617.jpg" style="--ar:1.33;--op:40% 50%"><img src="media/archive-2025/thumb/35-cr5-1617.jpg" alt="Слайд Archiquad на большом экране" width="1100" height="734" loading="lazy"></button>
+      <button class="gi" type="button" data-i="35" data-full="media/archive-2025/36-cr5-1590.jpg" style="--ar:1.5"><img src="media/archive-2025/thumb/36-cr5-1590.jpg" alt="Зал и партнёры форума на экране" width="1100" height="734" loading="lazy"></button>
       </div>
       <p class="amore"><a href="https://drive.google.com/drive/folders/1lZOJY6GOSNlPPcEypep-JzIY0N3KchkF" target="_blank" rel="noopener" data-t="ar.more">Посмотреть все →</a></p>
-    </section>
-    <section class="afacts g12">
-      <div><p class="lab" data-t="ar.f1">Участников</p><p class="val">250–350</p></div>
-      <div><p class="lab" data-t="ar.f2">Доклады</p><p class="val" data-t="ar.v2">5 часов</p></div>
-      <div><p class="lab" data-t="ar.f3">Спикеров</p><p class="val">8</p></div>
-      <div><p class="lab" data-t="ar.f4">Город</p><p class="val" data-t="city">Ташкент</p></div>
-    </section>
-    <section class="avid">
-      <a class="yt" href="https://www.youtube.com/watch?v=5wCIuZO7chs&amp;t=33s" target="_blank" rel="noopener">
-        <img src="media/archive-2025/youtube-cover.jpg" alt="TAS3D 2025 Film" width="1280" height="720">
-        <span class="play" aria-hidden="true"></span>
-        <span class="yt-l"><span data-t="ar.vid">Фильм TAS3D 2025</span><span>YouTube →</span></span>
-      </a>
     </section>
     <div class="foot"><a href="#home" data-t="ar.back">← Форум 2026</a><span>© 2026 TAS3D</span></div>
   </main>
@@ -797,7 +817,7 @@ body{background:var(--bg)}
   <button class="lb-x" id="lbX" type="button" aria-label="Закрыть">×</button>
   <button class="lb-p" id="lbP" type="button" aria-label="Предыдущее фото">←</button>
   <button class="lb-n" id="lbN" type="button" aria-label="Следующее фото">→</button>
-  <p class="lb-c" id="lbC">01 / 16</p>
+  <p class="lb-c" id="lbC">01 / 36</p>
 </div>
 
 <script>
