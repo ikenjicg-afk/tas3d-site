@@ -33,7 +33,8 @@
 <meta name="twitter:title" content="TAS3D 2026 — Tashkent architecture visualisation forum">
 <meta name="twitter:description" content="Tashkent, 03.12.2026, 15:00–19:00. Central Asian University.">
 <meta name="twitter:image" content="https://tas3d.uz/media/og-cover.jpg">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Event","name":"TAS3D 2026","description":"A forum on 3D visualisation in architecture: talks, workshops and networking for architects, visualisers, designers and developers.","startDate":"2026-12-03T15:00:00+05:00","endDate":"2026-12-03T19:00:00+05:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Central Asian University","address":{"@type":"PostalAddress","streetAddress":"264 Milliy bog St","addressLocality":"Tashkent","postalCode":"111221","addressCountry":"UZ"}},"image":["https://tas3d.uz/media/og-cover.jpg"],"url":"https://tas3d.uz/en/","inLanguage":["ru","en"],"isAccessibleForFree":true,"offers":{"@type":"Offer","url":"https://luma.com/i6r44wo4","price":"0","priceCurrency":"UZS","availability":"https://schema.org/InStock"},"organizer":{"@type":"Organization","name":"TAS3D","url":"https://tas3d.uz/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Event","name":"TAS3D 2026","description":"A forum on 3D visualisation in architecture: talks, workshops and networking for architects, visualisers, designers and developers.","startDate":"2026-12-03T15:00:00+05:00","endDate":"2026-12-03T19:00:00+05:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Central Asian University","address":{"@type":"PostalAddress","streetAddress":"264 Milliy bog St","addressLocality":"Tashkent","postalCode":"111221","addressCountry":"UZ"}},"image":["https://tas3d.uz/media/og-cover.jpg"],"url":"https://tas3d.uz/en/","inLanguage":["ru","en"],"isAccessibleForFree":true,"offers":{"@type":"Offer","url":"https://luma.com/i6r44wo4","price":"0","priceCurrency":"UZS","availability":"https://schema.org/InStock"},"organizer":{"@type":"Organization","@id":"https://tas3d.uz/#org","name":"TAS3D","url":"https://tas3d.uz/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://tas3d.uz/#org","name":"TAS3D","url":"https://tas3d.uz/","logo":{"@type":"ImageObject","url":"https://tas3d.uz/icon-512.png","width":512,"height":512},"sameAs":["https://t.me/TAS3Duz","https://www.instagram.com/tas3dconferences/"]},{"@type":"WebSite","@id":"https://tas3d.uz/#website","name":"TAS3D","url":"https://tas3d.uz/","inLanguage":["ru","en","uz"],"publisher":{"@id":"https://tas3d.uz/#org"}}]}</script>
 <meta name="theme-color" content="#0e0e0e">
 <link rel="preload" href="/media/tas3d-2025-poster.jpg" as="image">
 <link rel="preload" href="/media/logo-tas3d.png" as="image">
@@ -45,24 +46,29 @@
 @font-face{font-family:"HelvTAS";src:url(/fonts/helvtas-400.woff) format("woff");font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:"HelvTAS";src:url(/fonts/helvtas-500.woff) format("woff");font-weight:500;font-style:normal;font-display:swap}
 @font-face{font-family:"HelvTAS";src:url(/fonts/helvtas-700.woff) format("woff");font-weight:700;font-style:normal;font-display:swap}
+/* Russian letters: Helvetica on Mac/iPhone (local), FreeSans Cyrillic elsewhere (fonts/README.txt) */
+@font-face{font-family:"HelvTAS";src:local("Helvetica"),url(/fonts/cyr-400.woff) format("woff");font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0400-04FF,U+2116}
+@font-face{font-family:"HelvTAS";src:local("Helvetica"),url(/fonts/cyr-400.woff) format("woff");font-weight:500;font-style:normal;font-display:swap;unicode-range:U+0400-04FF,U+2116}
+@font-face{font-family:"HelvTAS";src:local("Helvetica Bold"),local("Helvetica-Bold"),url(/fonts/cyr-700.woff) format("woff");font-weight:700;font-style:normal;font-display:swap;unicode-range:U+0400-04FF,U+2116}
 
 /* Layout: 12-column Swiss grid with visible faint column lines; giant regular-weight type; dark framed images; short home page plus About / Contacts views. Orange marks, blue hovers. */
 :root{
   --bg:#f4f4f2;
   --fg:#0e0e0e;
-  --mute:#727270;
+  --mute:#6e6e6c;
   --line:#e6e6e3;
   --rule:#d2d2ce;
   --frame:#1f1f1f;
   --ph:#c4c4c0;
   --orange:#f0552a;
+  --orange-t:#cc380e;
   --blue:#1d3bff;
   --pad:max(22px, env(safe-area-inset-left, 0px));
   --padr:max(22px, env(safe-area-inset-right, 0px));
   --gap:28px;
   color-scheme:light;
 }
-html.night{--bg:#0e0e0e;--fg:#f1f1ee;--mute:#8b8b87;--line:#1c1c1c;--rule:#333331;--frame:#1b1b1b;--ph:#2b2b2a;--blue:#6b7fff;color-scheme:dark}
+html.night{--orange-t:#f0552a;--bg:#0e0e0e;--fg:#f1f1ee;--mute:#8b8b87;--line:#1c1c1c;--rule:#333331;--frame:#1b1b1b;--ph:#2b2b2a;--blue:#6b7fff;color-scheme:dark}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 img{max-width:100%}
@@ -166,7 +172,7 @@ h1,h2,h3{margin:0;font-weight:400}
 .big{font-size:clamp(26px,3.4vw,54px);line-height:1.06;letter-spacing:-.035em}
 .big b{font-weight:700}
 .big sup{font-size:.42em;vertical-align:.9em;letter-spacing:0}
-.big .acc{color:var(--orange)}
+.big .acc{color:var(--orange-t)}
 .list{list-style:none;margin:0;padding:0;border-top:1px solid var(--fg)}
 .list li{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,5fr);gap:var(--gap);padding-block:16px;border-bottom:1px solid var(--rule);align-items:baseline}
 .list li b{font-weight:400;font-size:clamp(20px,2vw,32px);letter-spacing:-.02em;line-height:1.05}
@@ -383,7 +389,7 @@ html.hv-on{--bg:#0e0e0e;--line:#1c1c1c}
 body{background:color-mix(in srgb,#000 calc(var(--pg,0) * 50%),var(--bg))}
 
 /* v14: orange "TAS3D 2026" in the menu; contacts as plain word links; titles always on one line */
-.nav a.acc{color:var(--orange)}
+.nav a.acc{color:var(--orange-t)}
 .nav a.acc:hover{color:var(--fg)}
 .nav a.acc[aria-current="page"]{color:var(--orange)}
 .ptitle{flex-wrap:nowrap}
@@ -470,7 +476,7 @@ body{background:color-mix(in srgb,#000 calc(var(--pg,0) * 50%),var(--bg))}
 /* home: video only behind the first screen; event info follows on the light ground; registration slides over at the end */
 html.hv-on{--bg:#f4f4f2;--line:#e6e6e3}
 body{background:var(--bg)}
-[data-view="home"] .lt{min-height:0;padding-bottom:0;--fg:#0e0e0e;--mute:#727270;--rule:#d2d2ce;color:var(--fg)}
+[data-view="home"] .lt{min-height:0;padding-bottom:0;--fg:#0e0e0e;--mute:#6e6e6c;--rule:#d2d2ce;color:var(--fg)}
 .first{position:relative;display:flow-root;min-height:calc(100vh - var(--hh, 110px));padding-bottom:40px;--fg:#f4f4f2;--mute:rgba(244,244,242,.66);--rule:rgba(255,255,255,.2);color:var(--fg)}
 .info{display:flow-root;padding-bottom:clamp(90px,10vw,160px)}
 .hello .links{justify-content:space-between}
@@ -580,12 +586,24 @@ body{background:var(--bg)}
 @media (max-width:900px){
   .mreg{display:flex;position:fixed;z-index:60;left:var(--pad);right:var(--padr);bottom:calc(14px + env(safe-area-inset-bottom,0px));align-items:center;gap:12px;padding:0 18px;height:54px;background:var(--orange);color:#fff;font-size:17px;letter-spacing:-.01em;box-shadow:0 8px 28px rgba(0,0,0,.28);transform:translateY(calc(100% + 30px));opacity:0;pointer-events:none;transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .25s}
   .mreg.on{transform:none;opacity:1;pointer-events:auto}
-  .mreg .mreg-d{margin-left:auto;opacity:.85;font-variant-numeric:tabular-nums}
+  .mreg .mreg-d{margin-left:auto;font-variant-numeric:tabular-nums}
   .foot{padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}
 }
+/* v24: contrast (button text large enough for white on orange), visible focus on dark, skip link, hidden phone button not focusable */
+.btn{font-size:19px}
+@media (max-width:900px){
+  .mreg{font-size:19px;font-weight:700;white-space:nowrap;visibility:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .25s,visibility 0s linear .35s}
+  .mreg.on{visibility:visible;transition-delay:0s}
+}
+@media (max-width:374px){ .mreg .mreg-d{display:none} .mreg span[aria-hidden]{margin-left:auto} }
+.first :focus-visible,.dk :focus-visible,html.night :focus-visible,.lb :focus-visible,html.hv-on .head :focus-visible{outline-color:#8ea0ff}
+[tabindex="-1"]:focus{outline:none}
+.skip{position:fixed;z-index:100;left:var(--pad);top:calc(8px + env(safe-area-inset-top,0px));padding:10px 14px;background:var(--fg);color:var(--bg);font-size:15px;transform:translateY(-200%)}
+.skip:focus{transform:none}
 </style>
 </head>
 <body>
+<a class="skip" href="#home" data-t="skip">Skip to content</a>
 <div class="cols-bg" aria-hidden="true"><div class="g12"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
 
 <div class="page">
@@ -602,7 +620,7 @@ body{background:var(--bg)}
     <a class="brand" href="#home" aria-label="TAS3D">
       <i class="logo" aria-hidden="true"></i>
     </a>
-    <nav class="nav" aria-label="Menu">
+    <nav class="nav" aria-label="Menu" data-ta="a.menu">
       <a href="#about" data-v="about" data-t="nav.about">About</a>
       <a href="#gallery" data-v="gallery" data-t="nav.arch">Gallery</a>
     </nav>
@@ -628,7 +646,7 @@ body{background:var(--bg)}
       <div class="hv-grain"></div>
     </div>
     <section class="hero">
-      <h1 class="sr">TAS3D 2026 — Tashkent architecture visualisation forum</h1>
+      <h1 class="sr" data-t="h1">TAS3D 2026 — Tashkent architecture visualisation forum</h1>
       <div class="hero-row" aria-hidden="true">
         <span class="fw hl">TAS3D</span>
         <span class="fw hr">2026</span>
@@ -645,7 +663,7 @@ body{background:var(--bg)}
 
     <div class="info" id="sec-2026">
     <section class="blk g12">
-      <p class="k" data-t="ab.who">Who it’s for</p>
+      <h2 class="k" data-t="ab.who">Who it’s for</h2>
       <ul class="v list">
         <li><b data-t="who.1">Architects</b><span data-t="who.1d">Architects need to know what’s happening in visualisation and graphics: it shapes how the client sees the project. You’ll learn which tools and neural networks studios already use and how to get from a sketch to a convincing image faster. And you can find visualisers for your projects.</span></li>
         <li><b data-t="who.2">3D visualisers</b><span data-t="who.2d">This is where people who make visualisation every day get together. You’ll see how strong studios work and which techniques and tools they use, and understand where the profession is heading. It’s also a chance to meet colleagues and clients in person.</span></li>
@@ -656,7 +674,7 @@ body{background:var(--bg)}
     </section>
 
     <section class="blk g12">
-      <p class="k" data-t="ab.format">The day</p>
+      <h2 class="k" data-t="ab.format">The day</h2>
       <div class="v four">
         <article><h3>TBD</h3><p data-t="tbd">To be announced soon</p></article>
         <article><h3>TBD</h3><p data-t="tbd">To be announced soon</p></article>
@@ -666,7 +684,7 @@ body{background:var(--bg)}
     </section>
     <template id="tpl-format">
     <section class="blk g12">
-      <p class="k" data-t="ab.format">The day</p>
+      <h2 class="k" data-t="ab.format">The day</h2>
       <div class="v four">
         <article><span class="dotm"></span><h3 data-t="fm1.h">Talks</h3><p data-t="fm1.p">Practitioners show finished projects and explain how they got there.</p></article>
         <article><h3 data-t="fm2.h">Workshops</h3><p data-t="fm2.p">Short sessions on tools and techniques. Topics: <span class="ph-in">[tbc]</span></p></article>
@@ -677,7 +695,7 @@ body{background:var(--bg)}
     </template>
 
     <section class="blk g12">
-      <p class="k" data-t="ab.prog">Programme</p>
+      <h2 class="k" data-t="ab.prog">Programme</h2>
       <div class="v rows">
         <div class="row"><span class="t">--:--</span><span class="n">TBD</span><span class="p" data-t="tbd">To be announced soon</span></div>
         <div class="row"><span class="t">--:--</span><span class="n">TBD</span><span class="p" data-t="tbd">To be announced soon</span></div>
@@ -688,7 +706,7 @@ body{background:var(--bg)}
     </section>
     <template id="tpl-program">
     <section class="blk g12">
-      <p class="k" data-t="ab.prog">Programme</p>
+      <h2 class="k" data-t="ab.prog">Programme</h2>
       <div class="v rows">
         <div class="row"><span class="t">15:00</span><span class="n" data-t="r.open">Opening</span><span class="p" data-t="r.org">Organisers</span></div>
         <div class="row talk"><span class="t">15:15</span><span class="n" data-t="r.talk">Talk <span class="ph-in">[topic]</span></span><span class="p" data-t="r.who"><span class="ph-in">[name, company]</span></span></div>
@@ -703,7 +721,7 @@ body{background:var(--bg)}
     </template>
 
     <section class="blk g12 spk-blk">
-      <p class="k" data-t="ab.spk">Speakers</p>
+      <h2 class="k" data-t="ab.spk">Speakers</h2>
       <div class="spk2">
         <article class="sp"><div class="sp-ph sp-tbd"><span>TBD</span></div><h3>TBD</h3><p class="sp-r" data-t="tbd">To be announced soon</p></article>
         <article class="sp"><div class="sp-ph sp-tbd"><span>TBD</span></div><h3>TBD</h3><p class="sp-r" data-t="tbd">To be announced soon</p></article>
@@ -715,7 +733,7 @@ body{background:var(--bg)}
     </section>
     <template id="tpl-speakers">
     <section class="blk g12 spk-blk">
-      <p class="k" data-t="ab.spk">Speakers</p>
+      <h2 class="k" data-t="ab.spk">Speakers</h2>
       <div class="spk2">
         <article class="sp"><div class="sp-ph"><img src="/media/speakers/daniel-nagaets.jpg" alt="" width="1200" height="1200" loading="lazy"></div><h3 data-t="sp1.n">Daniel Nagaets</h3><p class="sp-r" data-t="sp1.r">Founder, Rendercamp</p><p class="sp-t" data-t="spk.t"><span class="ph-in">[talk topic]</span></p></article>
         <article class="sp"><div class="sp-ph"><img src="/media/speakers/artem-kupriianenko.jpg" alt="" width="1200" height="1200" loading="lazy"></div><h3 data-t="sp2.n">Artem Kupriianenko</h3><p class="sp-r" data-t="sp2.r">Founder, Omegarender</p><p class="sp-t" data-t="spk.t"><span class="ph-in">[talk topic]</span></p></article>
@@ -728,14 +746,14 @@ body{background:var(--bg)}
     </template>
 
     <section class="blk g12 prt">
-      <p class="k" data-t="prt.title">Partners</p>
+      <h2 class="k" data-t="prt.title">Partners</h2>
       <div class="v prt-l">
         <a href="https://centralasian.uz/" target="_blank" rel="noopener" aria-label="Central Asian University"><i class="prt-cau" aria-hidden="true"></i></a>
       </div>
     </section>
 
     <section class="blk g12">
-      <p class="k" data-t="ab.faq">FAQ</p>
+      <h2 class="k" data-t="ab.faq">FAQ</h2>
       <div class="v">
         <p class="faq-yr">TAS3D 2026</p>
         <div class="faq">
@@ -770,7 +788,7 @@ body{background:var(--bg)}
     <h2 class="ptitle"><span class="pt" data-t="ab.title">About</span></h2>
 
     <section class="blk g12">
-      <p class="k" data-t="ab.what">What is TAS3D</p>
+      <h3 class="k" data-t="ab.what">What is TAS3D</h3>
       <div class="v">
         <figure class="ab-ph"><img src="/media/about/tas3d-2025-hall-2400.jpg" srcset="/media/about/tas3d-2025-hall-1200.jpg 1200w, /media/about/tas3d-2025-hall-2400.jpg 2400w" sizes="(max-width:900px) 100vw, 75vw" alt="TAS3D 2025, Central Asian University" width="2400" height="1601"></figure>
         <p class="big" data-t="ab.big"><b>TAS3D</b> is a forum in <b>Tashkent</b><sup>(UZ)</sup> on <b>3D visualisation in architecture</b>. One day of talks, workshops and conversations about how images help a project, from the first sketch to the client presentation. For <b>architects, visualisers, designers</b> and <span class="acc">developers.</span></p>
@@ -783,14 +801,14 @@ body{background:var(--bg)}
     </section>
 
     <section class="blk g12" id="sec-contacts">
-      <p class="k" data-t="ct.title">Contacts</p>
+      <h3 class="k" data-t="ct.title">Contacts</h3>
       <ul class="v cl">
         <li><a href="https://t.me/TAS3Duz" target="_blank" rel="noopener"><span>Telegram</span><span aria-hidden="true">→</span></a></li>
         <li><a href="https://www.instagram.com/tas3dconferences/" target="_blank" rel="noopener"><span>Instagram</span><span aria-hidden="true">→</span></a></li>
         <li><a href="https://maps.app.goo.gl/AizKhATxjvJYT1wS7" target="_blank" rel="noopener"><span data-t="ct.addr">Address</span><span aria-hidden="true">→</span></a></li>
       </ul>
     </section>
-    <div class="foot"><span>© 2026 TAS3D</span><a class="after-hide" href="https://luma.com/i6r44wo4" target="_blank" rel="noopener" style="color:var(--orange)" data-t="h.reg">Register →</a></div>
+    <div class="foot"><span>© 2026 TAS3D</span><a class="after-hide" href="https://luma.com/i6r44wo4" target="_blank" rel="noopener" style="color:var(--orange-t)" data-t="h.reg">Register →</a></div>
   </main>
 
   <!-- GALLERY -->
@@ -809,7 +827,7 @@ body{background:var(--bg)}
         <span class="yt-l"><span data-t="ar.vid">TAS3D 2025 film</span><span>YouTube →</span></span>
       </a>
     </section>
-    <section class="gal" aria-label="TAS3D 2025 Tashkent">
+    <section class="gal" aria-label="TAS3D 2025 Tashkent" data-ta="gal.h">
       <h3 class="gal-h" data-t="gal.h">TAS3D 2025 Tashkent</h3>
       <div class="agal">
       <button class="gi" type="button" data-i="0" data-full="/media/archive-2025/01-cr5-1520.jpg" style="--ar:1.78"><picture><source srcset="/media/archive-2025/thumb/01-cr5-1520.webp" type="image/webp"><img src="/media/archive-2025/thumb/01-cr5-1520.jpg" alt="Зал TAS3D 2025 перед началом" width="1100" height="733" loading="lazy"></picture></button>
@@ -859,9 +877,9 @@ body{background:var(--bg)}
 <div class="cursor" aria-hidden="true"><span></span></div>
 <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="TAS3D 2025">
   <img class="lb-img" id="lbImg" alt="">
-  <button class="lb-x" id="lbX" type="button" aria-label="Закрыть">×</button>
-  <button class="lb-p" id="lbP" type="button" aria-label="Предыдущее фото">←</button>
-  <button class="lb-n" id="lbN" type="button" aria-label="Следующее фото">→</button>
+  <button class="lb-x" id="lbX" type="button" aria-label="Close" data-ta="a.close">×</button>
+  <button class="lb-p" id="lbP" type="button" aria-label="Previous photo" data-ta="a.prev">←</button>
+  <button class="lb-n" id="lbN" type="button" aria-label="Next photo" data-ta="a.next">→</button>
   <p class="lb-c" id="lbC">01 / 36</p>
 </div>
 
@@ -959,6 +977,12 @@ body{background:var(--bg)}
   Object.assign(window.TAS3D_I18N, {
     'nav.arch': ['Gallery', 'Galereya'],
     'prt.title': ['Partners', 'Hamkorlar'],
+    'h1': ['TAS3D 2026 — Tashkent architecture visualisation forum', 'TAS3D 2026 — Toshkentda arxitekturada 3D-vizualizatsiya bo‘yicha forum'],
+    'skip': ['Skip to content', 'Asosiy qismga o‘tish'],
+    'a.menu': ['Menu', 'Menyu'],
+    'a.close': ['Close', 'Yopish'],
+    'a.prev': ['Previous photo', 'Oldingi surat'],
+    'a.next': ['Next photo', 'Keyingi surat'],
     'hello.thx': ['Thank you', 'Rahmat'],
     'thx.tg': ['Photos and videos on Telegram', 'Surat va videolar — Telegramda'],
     'mreg': ['Registration', 'Ro‘yxatdan o‘tish'],
@@ -996,7 +1020,7 @@ window.TAS3D_HEAD = {
 
 </script>
 <script>window.TAS3D_PAGE_LANG = "en";
-window.TAS3D_RU = {"cd.d": "Дней", "cd.h": "Часов", "cd.m": "Минут", "cd.s": "Секунд", "nav.about": "О нас", "nav.arch": "Галерея", "h.date.l": "Дата", "h.date.v": "03.12.2026", "h.place.l": "Место", "h.place.v": "Central Asian University in Tashkent — CAU", "h.format.l": "Формат", "h.format.v": "Офлайн", "h.time.l": "Время", "h.time.v": "с 15:00 до 19:00", "ab.who": "Для кого", "who.1": "Архитекторы", "who.1d": "Архитектору важно понимать, что происходит в индустрии визуализации и графики: от этого зависит, каким заказчик увидит проект. Вы узнаете, какие инструменты и нейросети уже используют студии и как быстрее прийти от эскиза к убедительной картинке. И сможете найти визуализаторов для своих проектов.", "who.2": "3D-визуализаторы", "who.2d": "Здесь собираются те, кто делает визуализацию каждый день. Вы увидите, как работают сильные студии и какие приёмы и инструменты они используют, и поймёте, куда движется профессия. А ещё это повод познакомиться вживую с коллегами и заказчиками.", "who.3": "Дизайнеры", "who.3d": "Дизайнеру интерьера и ландшафта важно понимать, как проект превращается в картинку и что влияет на результат. Вы увидите весь процесс визуализации: модель, материалы, свет и финальную подачу. Это помогает точнее ставить задачу визуализатору или делать визуал самому.", "who.4": "Девелоперы", "who.4d": "Визуализация продаёт проект ещё до того, как он построен. Вы узнаете, какие форматы сейчас работают, от статичных рендеров до real-time и анимации, и на что смотреть при выборе подрядчика. Так решения по визуалу проекта становятся увереннее.", "who.5": "Студенты", "who.5d": "Учёба даёт основу, но работу в индустрии лучше увидеть своими глазами. Практики расскажут, как устроены реальные проекты и с чего начать карьеру. А ещё здесь можно познакомиться со студиями и найти первые контакты в профессии.", "ab.format": "Формат дня", "tbd": "Скоро объявим", "ab.prog": "Программа", "ab.spk": "Спикеры", "prt.title": "Партнёры", "ab.faq": "Вопросы", "faq.q1": "Нужна ли регистрация?", "faq.a1": "Да. Количество мест ограничено, поэтому регистрация обязательна.", "faq.q2": "Сколько стоит участие?", "faq.a2": "Бесплатно. Нужно только зарегистрироваться.", "faq.q3": "Подойдёт ли новичку?", "faq.a3": "Да. TAS3D подойдёт всем: и тем, кто только начинает, и тем, кто давно в профессии.", "faq.q4": "Можно ли пообщаться со спикером лично и задать вопросы?", "faq.a4": "Да, конечно. В программе есть кофе-брейк: в это время спикеры общаются с участниками форума, к ним можно подойти и задать вопрос.", "faq.q5": "Сколько будет длиться TAS3D 2026?", "faq.a5": "Примерно 4–6 часов.", "faq.q6": "На каком языке пройдёт форум?", "faq.a6": "На русском и английском. Доклады англоязычных спикеров будут с переводчиком.", "faq.q7": "Нужно ли что-то брать с собой?", "faq.a7": "Только QR-код. После регистрации Luma пришлёт его вам: сохраните и покажите на входе. Больше ничего не нужно, главное — приходите сами.", "hello.h": "Регистрация", "hello.thx": "Спасибо", "fm.reg": "Регистрация", "thx.tg": "Фото и видео — в Telegram", "ab.title": "О нас", "ab.what": "Что такое TAS3D", "ab.big": "<b>TAS3D<\/b> — форум в <b>Ташкенте<\/b><sup>(UZ)<\/sup> о <b>3D-визуализации в архитектуре<\/b>. Один день докладов, мастер-классов и разговоров о том, как изображение помогает проекту: от первого эскиза до презентации заказчику. Для <b>архитекторов, визуализаторов, дизайнеров<\/b> и <span class=\"acc\">девелоперов.<\/span>", "ab.p1": "TAS3D — передовой и один из крупнейших форумов в области архитектурной визуализации и искусственного интеллекта. Каждый год мы собираем визуализаторов, архитекторов, дизайнеров, 3D-художников и разработчиков, чтобы обсудить, куда движется индустрия и как новые технологии меняют профессию уже сегодня.", "ab.p2": "На TAS3D вы узнаете, как нейросети ускоряют работу над проектами, какие инструменты рендеринга и real-time визуализации задают тренды, и как превратить навыки в успешную карьеру или собственную студию. Спикеры — практики мирового уровня, которые делятся реальными кейсами, рабочими процессами и секретами мастерства, а не теорией.", "ab.p3": "Это больше, чем лекции. Это живое общение, нетворкинг с лидерами индустрии, мастер-классы, разбор портфолио и возможность найти единомышленников, клиентов и партнёров.", "ct.title": "Контакты", "ct.addr": "Адрес", "h.reg": "Регистрация →", "ar.title": "Галерея", "ar.f1": "Участников", "ar.f2": "Доклады", "ar.v2": "5 часов", "ar.f3": "Спикеров", "ar.f4": "Город", "city": "Ташкент", "ar.vid": "Фильм TAS3D 2025", "gal.h": "TAS3D 2025 Ташкент", "ar.more": "Посмотреть все →", "ar.back": "← Форум 2026", "mreg": "Регистрация", "fm1.h": "Доклады", "fm1.p": "Практики показывают готовые проекты и рассказывают, как пришли к результату.", "fm2.h": "Мастер-классы", "fm2.p": "Короткие сессии по инструментам и приёмам. Темы: <span class=\"ph-in\">[уточнить]<\/span>", "fm3.h": "Выставка работ", "fm3.p": "Визуализации участников. Подать работу можно до <span class=\"ph-in\">[срок]<\/span>.", "fm4.h": "Нетворкинг", "fm4.p": "Кофе и разговоры. Здесь находят подрядчиков, коллег и заказчиков.", "r.open": "Открытие", "r.org": "Организаторы", "r.talk": "Доклад <span class=\"ph-in\">[тема]<\/span>", "r.who": "<span class=\"ph-in\">[имя, компания]<\/span>", "r.lunch": "Перерыв и выставка работ", "r.ws": "Мастер-класс <span class=\"ph-in\">[тема]<\/span>", "r.panel": "Панельная дискуссия", "r.panelp": "<span class=\"ph-in\">[участники]<\/span>", "r.net": "Нетворкинг", "r.close": "Завершение", "sp1.n": "Даниил Нагаец", "sp1.r": "Основатель Rendercamp", "spk.t": "<span class=\"ph-in\">[тема доклада]<\/span>", "sp2.n": "Артем Куприяненко", "sp2.r": "Основатель Omegarender", "sp.soon": "Фото скоро", "sp3.r": "<span class=\"ph-in\">[имя спикера, должность]<\/span>", "sp4.n": "Влад", "sp4.r": "Арт-директор Omegarender"};</script>
+window.TAS3D_RU = {"skip": "К содержанию", "cd.d": "Дней", "cd.h": "Часов", "cd.m": "Минут", "cd.s": "Секунд", "nav.about": "О нас", "nav.arch": "Галерея", "h1": "TAS3D 2026 — форум о 3D-визуализации в архитектуре, Ташкент", "h.date.l": "Дата", "h.date.v": "03.12.2026", "h.place.l": "Место", "h.place.v": "Central Asian University in Tashkent — CAU", "h.format.l": "Формат", "h.format.v": "Офлайн", "h.time.l": "Время", "h.time.v": "с 15:00 до 19:00", "ab.who": "Для кого", "who.1": "Архитекторы", "who.1d": "Архитектору важно понимать, что происходит в индустрии визуализации и графики: от этого зависит, каким заказчик увидит проект. Вы узнаете, какие инструменты и нейросети уже используют студии и как быстрее прийти от эскиза к убедительной картинке. И сможете найти визуализаторов для своих проектов.", "who.2": "3D-визуализаторы", "who.2d": "Здесь собираются те, кто делает визуализацию каждый день. Вы увидите, как работают сильные студии и какие приёмы и инструменты они используют, и поймёте, куда движется профессия. А ещё это повод познакомиться вживую с коллегами и заказчиками.", "who.3": "Дизайнеры", "who.3d": "Дизайнеру интерьера и ландшафта важно понимать, как проект превращается в картинку и что влияет на результат. Вы увидите весь процесс визуализации: модель, материалы, свет и финальную подачу. Это помогает точнее ставить задачу визуализатору или делать визуал самому.", "who.4": "Девелоперы", "who.4d": "Визуализация продаёт проект ещё до того, как он построен. Вы узнаете, какие форматы сейчас работают, от статичных рендеров до real-time и анимации, и на что смотреть при выборе подрядчика. Так решения по визуалу проекта становятся увереннее.", "who.5": "Студенты", "who.5d": "Учёба даёт основу, но работу в индустрии лучше увидеть своими глазами. Практики расскажут, как устроены реальные проекты и с чего начать карьеру. А ещё здесь можно познакомиться со студиями и найти первые контакты в профессии.", "ab.format": "Формат дня", "tbd": "Скоро объявим", "ab.prog": "Программа", "ab.spk": "Спикеры", "prt.title": "Партнёры", "ab.faq": "Вопросы", "faq.q1": "Нужна ли регистрация?", "faq.a1": "Да. Количество мест ограничено, поэтому регистрация обязательна.", "faq.q2": "Сколько стоит участие?", "faq.a2": "Бесплатно. Нужно только зарегистрироваться.", "faq.q3": "Подойдёт ли новичку?", "faq.a3": "Да. TAS3D подойдёт всем: и тем, кто только начинает, и тем, кто давно в профессии.", "faq.q4": "Можно ли пообщаться со спикером лично и задать вопросы?", "faq.a4": "Да, конечно. В программе есть кофе-брейк: в это время спикеры общаются с участниками форума, к ним можно подойти и задать вопрос.", "faq.q5": "Сколько будет длиться TAS3D 2026?", "faq.a5": "Примерно 4–6 часов.", "faq.q6": "На каком языке пройдёт форум?", "faq.a6": "На русском и английском. Доклады англоязычных спикеров будут с переводчиком.", "faq.q7": "Нужно ли что-то брать с собой?", "faq.a7": "Только QR-код. После регистрации Luma пришлёт его вам: сохраните и покажите на входе. Больше ничего не нужно, главное — приходите сами.", "hello.h": "Регистрация", "hello.thx": "Спасибо", "fm.reg": "Регистрация", "thx.tg": "Фото и видео — в Telegram", "ab.title": "О нас", "ab.what": "Что такое TAS3D", "ab.big": "<b>TAS3D<\/b> — форум в <b>Ташкенте<\/b><sup>(UZ)<\/sup> о <b>3D-визуализации в архитектуре<\/b>. Один день докладов, мастер-классов и разговоров о том, как изображение помогает проекту: от первого эскиза до презентации заказчику. Для <b>архитекторов, визуализаторов, дизайнеров<\/b> и <span class=\"acc\">девелоперов.<\/span>", "ab.p1": "TAS3D — передовой и один из крупнейших форумов в области архитектурной визуализации и искусственного интеллекта. Каждый год мы собираем визуализаторов, архитекторов, дизайнеров, 3D-художников и разработчиков, чтобы обсудить, куда движется индустрия и как новые технологии меняют профессию уже сегодня.", "ab.p2": "На TAS3D вы узнаете, как нейросети ускоряют работу над проектами, какие инструменты рендеринга и real-time визуализации задают тренды, и как превратить навыки в успешную карьеру или собственную студию. Спикеры — практики мирового уровня, которые делятся реальными кейсами, рабочими процессами и секретами мастерства, а не теорией.", "ab.p3": "Это больше, чем лекции. Это живое общение, нетворкинг с лидерами индустрии, мастер-классы, разбор портфолио и возможность найти единомышленников, клиентов и партнёров.", "ct.title": "Контакты", "ct.addr": "Адрес", "h.reg": "Регистрация →", "ar.title": "Галерея", "ar.f1": "Участников", "ar.f2": "Доклады", "ar.v2": "5 часов", "ar.f3": "Спикеров", "ar.f4": "Город", "city": "Ташкент", "ar.vid": "Фильм TAS3D 2025", "gal.h": "TAS3D 2025 Ташкент", "ar.more": "Посмотреть все →", "ar.back": "← Форум 2026", "mreg": "Регистрация", "fm1.h": "Доклады", "fm1.p": "Практики показывают готовые проекты и рассказывают, как пришли к результату.", "fm2.h": "Мастер-классы", "fm2.p": "Короткие сессии по инструментам и приёмам. Темы: <span class=\"ph-in\">[уточнить]<\/span>", "fm3.h": "Выставка работ", "fm3.p": "Визуализации участников. Подать работу можно до <span class=\"ph-in\">[срок]<\/span>.", "fm4.h": "Нетворкинг", "fm4.p": "Кофе и разговоры. Здесь находят подрядчиков, коллег и заказчиков.", "r.open": "Открытие", "r.org": "Организаторы", "r.talk": "Доклад <span class=\"ph-in\">[тема]<\/span>", "r.who": "<span class=\"ph-in\">[имя, компания]<\/span>", "r.lunch": "Перерыв и выставка работ", "r.ws": "Мастер-класс <span class=\"ph-in\">[тема]<\/span>", "r.panel": "Панельная дискуссия", "r.panelp": "<span class=\"ph-in\">[участники]<\/span>", "r.net": "Нетворкинг", "r.close": "Завершение", "sp1.n": "Даниил Нагаец", "sp1.r": "Основатель Rendercamp", "spk.t": "<span class=\"ph-in\">[тема доклада]<\/span>", "sp2.n": "Артем Куприяненко", "sp2.r": "Основатель Omegarender", "sp.soon": "Фото скоро", "sp3.r": "<span class=\"ph-in\">[имя спикера, должность]<\/span>", "sp4.n": "Влад", "sp4.r": "Арт-директор Omegarender", "a.menu": "Меню", "a.close": "Закрыть", "a.prev": "Предыдущее фото", "a.next": "Следующее фото"};</script>
 <script>
 /* TAS3D 2026 — behaviour: languages, views (#home #about #gallery #contacts),
    hero video, split-flap title, layered dark scroll, custom cursor, registration form. */
@@ -1010,6 +1034,8 @@ window.TAS3D_RU = {"cd.d": "Дней", "cd.h": "Часов", "cd.m": "Минут
   var RU = {};
   // on /en/ and /uz/ the markup is already translated, so the Russian text comes from window.TAS3D_RU
   var RU0 = window.TAS3D_RU || null;
+  var tnodes = [].slice.call(document.querySelectorAll('[data-ta]')), RUA = {};
+  tnodes.forEach(function (n) { var k = n.getAttribute('data-ta'); if (!(k in RUA)) RUA[k] = (RU0 && k in RU0) ? RU0[k] : n.getAttribute('aria-label'); });
   nodes.forEach(function (n) { var k = n.getAttribute('data-t'); if (!(k in RU)) RU[k] = (RU0 && k in RU0) ? RU0[k] : n.innerHTML; });
   var lang = 'ru';
   function msg(k) { var a = D[k]; return lang === 'ru' ? a[0] : lang === 'en' ? a[1] : a[2]; }
@@ -1021,6 +1047,10 @@ window.TAS3D_RU = {"cd.d": "Дней", "cd.h": "Часов", "cd.m": "Минут
       var k = n.getAttribute('data-t');
       var v = (l === 'ru' || !D[k]) ? RU[k] : D[k][LI[l]];
       if (n.innerHTML !== v) { n.innerHTML = v; if (n.classList.contains('pt')) n.removeAttribute('aria-label'); }
+    });
+    tnodes.forEach(function (n) {
+      var k = n.getAttribute('data-ta'), v = (l === 'ru' || !D[k]) ? RUA[k] : D[k][LI[l]];
+      n.setAttribute('aria-label', String(v).replace(/<[^>]+>/g, ''));
     });
     document.querySelectorAll('.lang button').forEach(function (b) {
       b.setAttribute('aria-pressed', b.getAttribute('data-lang') === l ? 'true' : 'false');
@@ -1109,6 +1139,13 @@ window.TAS3D_RU = {"cd.d": "Дней", "cd.h": "Часов", "cd.m": "Минут
 
   // Views. #contacts and #register are sections now: they open their page and scroll to the block.
   var ALIAS = { contacts: ['about', 'sec-contacts'], register: ['home', 'sec-reg'], 'tas3d-2026': ['home', 'sec-2026'], 'archive-2025': ['gallery', null] };
+  var routed = false;
+  function focusView(v, el) {
+    el = el || (v === 'home' ? document.querySelector('[data-view="home"] h1') : document.querySelector('[data-view="' + v + '"] .ptitle'));
+    if (!el) return;
+    if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '-1');
+    try { el.focus({ preventScroll: true }); } catch (e) { el.focus(); }
+  }
   function route() {
     var h = location.hash.replace('#', '');
     var target = null;
@@ -1128,9 +1165,11 @@ window.TAS3D_RU = {"cd.d": "Дней", "cd.h": "Часов", "cd.m": "Минут
     night();
     if (target) {
       var el = document.getElementById(target);
-      if (el) requestAnimationFrame(function () { el.scrollIntoView({ behavior: changed ? 'auto' : 'smooth', block: 'start' }); });
-    }
+      if (el) requestAnimationFrame(function () { el.scrollIntoView({ behavior: changed ? 'auto' : 'smooth', block: 'start' }); if (routed) focusView(v, el); });
+    } else if (changed && routed) focusView(v);
+    routed = true;
   }
+  document.querySelector('.skip').addEventListener('click', function (e) { e.preventDefault(); focusView(current); });
   window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(night); } }, { passive: true });
   window.addEventListener('hashchange', route);
   // a second click on the same section link should still scroll there
@@ -1395,6 +1434,11 @@ window.TAS3D_RU = {"cd.d": "Дней", "cd.h": "Часов", "cd.m": "Минут
   document.addEventListener('keydown', function (e) {
     if (lb.hidden) return;
     if (e.key === 'Escape') lbClose();
+    else if (e.key === 'Tab') {
+      var f = ['lbX', 'lbP', 'lbN'].map(function (id) { return document.getElementById(id); });
+      var i = f.indexOf(document.activeElement); e.preventDefault();
+      f[(i + (e.shiftKey ? -1 : 1) + f.length) % f.length].focus();
+    }
     else if (e.key === 'ArrowLeft') lbShow(li - 1);
     else if (e.key === 'ArrowRight') lbShow(li + 1);
   });
@@ -1418,6 +1462,27 @@ window.TAS3D_RU = {"cd.d": "Дней", "cd.h": "Часов", "cd.m": "Минут
   window.addEventListener('scroll', function () { if (!mtick) { mtick = true; requestAnimationFrame(mregUpdate); } }, { passive: true });
   window.addEventListener('hashchange', function () { regIn = false; setTimeout(mregUpdate, 50); });
   mregUpdate();
+
+  // Browser bar colour (theme-color) follows what is at the top of the screen
+  var themeMeta = document.querySelector('meta[name="theme-color"]'), themeT = false, themeLate = null;
+  function themeNow() {
+    themeT = false;
+    var c = null, el = document.elementFromPoint(window.innerWidth / 2, 2);
+    for (var e = el; e && e.nodeType === 1 && !c; e = e.parentElement) {
+      if (e.classList.contains('first') || e.classList.contains('hv')) { c = '#0e0e0e'; break; }
+      var m = getComputedStyle(e).backgroundColor.match(/rgba?\(([^)]+)\)/);
+      if (m) { var p = m[1].split(/[\s,\/]+/).filter(Boolean).map(Number); if (p.length < 4 || p[3] > 0.9) c = 'rgb(' + p[0] + ',' + p[1] + ',' + p[2] + ')'; }
+    }
+    if (!c) c = getComputedStyle(document.body).backgroundColor;
+    if (themeMeta && themeMeta.getAttribute('content') !== c) themeMeta.setAttribute('content', c);
+  }
+  function themeSoon() {
+    if (!themeT) { themeT = true; requestAnimationFrame(themeNow); }
+    clearTimeout(themeLate); themeLate = setTimeout(themeNow, 800); // colours fade for .7s
+  }
+  window.addEventListener('scroll', themeSoon, { passive: true });
+  window.addEventListener('hashchange', themeSoon);
+  themeSoon();
 
   // After the forum (03.12.2026, 19:00 in Tashkent) the registration block shows a thank-you note,
   // the phone button and the registration link on About disappear

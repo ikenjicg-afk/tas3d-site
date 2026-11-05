@@ -32,6 +32,7 @@ EVENT_DESC = {
     'en': 'A forum on 3D visualisation in architecture: talks, workshops and networking for architects, visualisers, designers and developers.',
     'uz': 'Arxitekturada 3D-vizualizatsiya bo‘yicha forum: arxitektorlar, vizualizatorlar, dizaynerlar va developerlar uchun ma’ruzalar, master-klasslar va netvorking.',
 }
+TA = re.compile(r'aria-label="([^"]*)" data-ta="([^"]+)"')  # screen-reader labels with a translation key
 VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'source', 'track', 'wbr'}
 
 
@@ -115,6 +116,13 @@ def build(src, lang, idx, i18n, head, ru_map, ranges):
         if key.startswith('_') or key not in i18n:
             continue
         out = out[:a] + i18n[key][idx] + out[b:]
+    # screen-reader labels (aria-label + data-ta)
+    def ta(mm):
+        k = mm.group(2)
+        if k not in i18n:
+            return mm.group(0)
+        return 'aria-label="%s" data-ta="%s"' % (html.escape(re.sub(r'<[^>]+>', '', i18n[k][idx]), quote=True), k)
+    out = TA.sub(ta, out)
     url = '%s/%s/' % (SITE, lang)
     title, desc = head[lang]
     # 2. head
@@ -188,6 +196,8 @@ def main():
     for key, a, b, in_tpl in found:
         if key not in ru_map:
             ru_map[key] = src[a:b]
+    for mm in TA.finditer(src):
+        ru_map.setdefault(mm.group(2), html.unescape(mm.group(1)))
     for lang, idx in LANGS.items():
         page = build(src, lang, idx, i18n, head, ru_map, ranges)
         os.makedirs(os.path.join(ROOT, lang), exist_ok=True)
