@@ -3,15 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>TAS3D 2026 — Tashkent architecture visualisation forum</title>
+<title>TAS3D 2026 — форум о 3D-визуализации в архитектуре</title>
 <meta name="description" content="TAS3D — форум о 3D-визуализации в архитектуре. Ташкент, 03.12.2026.">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="icon" href="favicon-48.png" sizes="48x48" type="image/png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png">
+<link rel="icon" href="/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <meta property="og:type" content="website">
 <meta property="og:title" content="TAS3D 2026 — форум о 3D-визуализации в архитектуре">
 <meta property="og:description" content="Ташкент, 03.12.2026, 15:00–19:00. Central Asian University.">
 <link rel="canonical" href="https://tas3d.uz/">
+<link rel="alternate" hreflang="ru" href="https://tas3d.uz/">
+<link rel="alternate" hreflang="en" href="https://tas3d.uz/en/">
+<link rel="alternate" hreflang="uz" href="https://tas3d.uz/uz/">
+<link rel="alternate" hreflang="x-default" href="https://tas3d.uz/">
 <meta property="og:url" content="https://tas3d.uz/">
 <meta property="og:site_name" content="TAS3D">
 <meta property="og:locale" content="ru_RU">
@@ -28,16 +34,16 @@
 <meta name="twitter:image" content="https://tas3d.uz/media/og-cover.jpg">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Event","name":"TAS3D 2026","description":"Форум о 3D-визуализации в архитектуре: доклады, мастер-классы и нетворкинг для архитекторов, визуализаторов, дизайнеров и девелоперов.","startDate":"2026-12-03T15:00:00+05:00","endDate":"2026-12-03T19:00:00+05:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Central Asian University","address":{"@type":"PostalAddress","streetAddress":"264 Milliy bog St","addressLocality":"Tashkent","postalCode":"111221","addressCountry":"UZ"}},"image":["https://tas3d.uz/media/og-cover.jpg"],"url":"https://tas3d.uz/","inLanguage":["ru","en"],"isAccessibleForFree":true,"offers":{"@type":"Offer","url":"https://luma.com/i6r44wo4","price":"0","priceCurrency":"UZS","availability":"https://schema.org/InStock"},"organizer":{"@type":"Organization","name":"TAS3D","url":"https://tas3d.uz/"}}</script>
 <meta name="theme-color" content="#0e0e0e">
-<link rel="preload" href="media/tas3d-2025-poster.jpg" as="image">
-<link rel="preload" href="media/logo-tas3d.png" as="image">
-<link rel="preload" href="fonts/helvtas-400.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/media/tas3d-2025-poster.jpg" as="image">
+<link rel="preload" href="/media/logo-tas3d.png" as="image">
+<link rel="preload" href="/fonts/helvtas-400.woff" as="font" type="font/woff" crossorigin>
 <style>
 /* TAS3D 2026 — styles
    Tokens (colours, grid gap, gutters) live in :root. Dark layer tokens: .dk and html.night. Hero video: .hv */
 
-@font-face{font-family:"HelvTAS";src:url(fonts/helvtas-400.woff) format("woff");font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:"HelvTAS";src:url(fonts/helvtas-500.woff) format("woff");font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:"HelvTAS";src:url(fonts/helvtas-700.woff) format("woff");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"HelvTAS";src:url(/fonts/helvtas-400.woff) format("woff");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"HelvTAS";src:url(/fonts/helvtas-500.woff) format("woff");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"HelvTAS";src:url(/fonts/helvtas-700.woff) format("woff");font-weight:700;font-style:normal;font-display:swap}
 
 /* Layout: 12-column Swiss grid with visible faint column lines; giant regular-weight type; dark framed images; short home page plus About / Contacts views. Orange marks, blue hovers. */
 :root{
@@ -545,7 +551,7 @@ body{background:var(--bg)}
 @media (max-width:900px){.list li{gap:8px}}
 
 /* v22: logo in the header; gallery (album heading + photo rows of different widths); 6 speakers, 3 per row */
-.brand .logo{display:block;width:clamp(104px,9vw,164px);aspect-ratio:900/212;background-color:currentColor;-webkit-mask:url(media/logo-tas3d.png) center/contain no-repeat;mask:url(media/logo-tas3d.png) center/contain no-repeat}
+.brand .logo{display:block;width:clamp(104px,9vw,164px);aspect-ratio:900/212;background-color:currentColor;-webkit-mask:url(/media/logo-tas3d.png) center/contain no-repeat;mask:url(/media/logo-tas3d.png) center/contain no-repeat}
 .gal-h{margin-top:clamp(60px,6vw,100px);font-size:clamp(24px,2.5vw,42px);font-weight:700;letter-spacing:-.035em;line-height:1}
 /* rows: every tile has the same height; its width follows --ar (tile shape), and the row stretches to the full width */
 .agal{--rh:calc((100vw - var(--pad) - var(--padr) - 2 * var(--gap)) / 4.4);display:flex;flex-wrap:wrap;gap:var(--gap);margin-top:clamp(32px,4vw,64px)}
@@ -568,7 +574,7 @@ body{background:var(--bg)}
 .gi picture{display:block;width:100%;height:100%}
 .prt-l a{display:inline-block;color:inherit;transition:opacity .2s}
 .prt-l a:hover{opacity:.6}
-.prt-cau{display:block;width:clamp(220px,26vw,400px);aspect-ratio:878/112;background-color:currentColor;-webkit-mask:url(media/partners/cau.png) left center/contain no-repeat;mask:url(media/partners/cau.png) left center/contain no-repeat}
+.prt-cau{display:block;width:clamp(220px,26vw,400px);aspect-ratio:878/112;background-color:currentColor;-webkit-mask:url(/media/partners/cau.png) left center/contain no-repeat;mask:url(/media/partners/cau.png) left center/contain no-repeat}
 .mreg{display:none}
 @media (max-width:900px){
   .mreg{display:flex;position:fixed;z-index:60;left:var(--pad);right:var(--padr);bottom:calc(14px + env(safe-area-inset-bottom,0px));align-items:center;gap:12px;padding:0 18px;height:54px;background:var(--orange);color:#fff;font-size:17px;letter-spacing:-.01em;box-shadow:0 8px 28px rgba(0,0,0,.28);transform:translateY(calc(100% + 30px));opacity:0;pointer-events:none;transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .25s}
@@ -611,10 +617,10 @@ body{background:var(--bg)}
     <div class="lt">
     <div class="first">
     <div class="hv" aria-hidden="true">
-      <video class="hv-v" autoplay muted loop playsinline preload="auto" poster="media/tas3d-2025-poster.jpg">
-        <source src="media/tas3d-2025-720.mp4" type="video/mp4" media="(max-width: 900px)">
-        <source src="media/tas3d-2025.mp4" type="video/mp4">
-        <source src="media/tas3d-2025.webm" type="video/webm">
+      <video class="hv-v" autoplay muted loop playsinline preload="auto" poster="/media/tas3d-2025-poster.jpg">
+        <source src="/media/tas3d-2025-720.mp4" type="video/mp4" media="(max-width: 900px)">
+        <source src="/media/tas3d-2025.mp4" type="video/mp4">
+        <source src="/media/tas3d-2025.webm" type="video/webm">
       </video>
       <div class="hv-ov"></div>
       <div class="hv-cols"></div>
@@ -710,8 +716,8 @@ body{background:var(--bg)}
     <section class="blk g12 spk-blk">
       <p class="k" data-t="ab.spk">Спикеры</p>
       <div class="spk2">
-        <article class="sp"><div class="sp-ph"><img src="media/speakers/daniel-nagaets.jpg" alt="" width="1200" height="1200" loading="lazy"></div><h3 data-t="sp1.n">Даниил Нагаец</h3><p class="sp-r" data-t="sp1.r">Основатель Rendercamp</p><p class="sp-t" data-t="spk.t"><span class="ph-in">[тема доклада]</span></p></article>
-        <article class="sp"><div class="sp-ph"><img src="media/speakers/artem-kupriianenko.jpg" alt="" width="1200" height="1200" loading="lazy"></div><h3 data-t="sp2.n">Артем Куприяненко</h3><p class="sp-r" data-t="sp2.r">Основатель Omegarender</p><p class="sp-t" data-t="spk.t"><span class="ph-in">[тема доклада]</span></p></article>
+        <article class="sp"><div class="sp-ph"><img src="/media/speakers/daniel-nagaets.jpg" alt="" width="1200" height="1200" loading="lazy"></div><h3 data-t="sp1.n">Даниил Нагаец</h3><p class="sp-r" data-t="sp1.r">Основатель Rendercamp</p><p class="sp-t" data-t="spk.t"><span class="ph-in">[тема доклада]</span></p></article>
+        <article class="sp"><div class="sp-ph"><img src="/media/speakers/artem-kupriianenko.jpg" alt="" width="1200" height="1200" loading="lazy"></div><h3 data-t="sp2.n">Артем Куприяненко</h3><p class="sp-r" data-t="sp2.r">Основатель Omegarender</p><p class="sp-t" data-t="spk.t"><span class="ph-in">[тема доклада]</span></p></article>
         <article class="sp"><div class="sp-ph empty"><span class="tag" data-t="sp.soon">Фото скоро</span></div><h3>D5 Render</h3><p class="sp-r" data-t="sp3.r"><span class="ph-in">[имя спикера, должность]</span></p><p class="sp-t" data-t="spk.t"><span class="ph-in">[тема доклада]</span></p></article>
         <article class="sp"><div class="sp-ph empty"><span class="tag" data-t="sp.soon">Фото скоро</span></div><h3 data-t="sp4.n">Влад</h3><p class="sp-r" data-t="sp4.r">Арт-директор Omegarender</p><p class="sp-t" data-t="spk.t"><span class="ph-in">[тема доклада]</span></p></article>
         <article class="sp"><div class="sp-ph sp-tbd"><span>TBD</span></div><h3>TBD</h3><p class="sp-r" data-t="tbd">Скоро объявим</p></article>
@@ -746,9 +752,10 @@ body{background:var(--bg)}
 
     </div>
     <section class="dk hello" id="sec-reg"><div class="g12 hello-in">
-      <h2 class="hello-big"><span data-t="hello.h">Регистрация</span><span class="hd">03.12.2026</span></h2>
+      <h2 class="hello-big"><span class="after-hide" data-t="hello.h">Регистрация</span><span class="after-show" data-t="hello.thx" hidden>Спасибо</span><span class="hd">03.12.2026</span></h2>
       <div class="rf">
-        <a class="btn rf-b" href="https://luma.com/i6r44wo4" target="_blank" rel="noopener"><span data-t="fm.reg">Регистрация</span><span aria-hidden="true">→</span></a>
+        <a class="btn rf-b after-hide" href="https://luma.com/i6r44wo4" target="_blank" rel="noopener"><span data-t="fm.reg">Регистрация</span><span aria-hidden="true">→</span></a>
+        <a class="btn rf-b after-show" href="https://t.me/TAS3Duz" target="_blank" rel="noopener" hidden><span data-t="thx.tg">Фото и видео — в Telegram</span><span aria-hidden="true">→</span></a>
       </div>
       <div class="links">
         <span class="l"><a href="https://t.me/TAS3Duz" target="_blank" rel="noopener">Telegram</a><span class="sep">|</span><a href="https://www.instagram.com/tas3dconferences/" target="_blank" rel="noopener">Instagram</a></span>
@@ -764,7 +771,7 @@ body{background:var(--bg)}
     <section class="blk g12">
       <p class="k" data-t="ab.what">Что такое TAS3D</p>
       <div class="v">
-        <figure class="ab-ph"><img src="media/about/tas3d-2025-hall-2400.jpg" srcset="media/about/tas3d-2025-hall-1200.jpg 1200w, media/about/tas3d-2025-hall-2400.jpg 2400w" sizes="(max-width:900px) 100vw, 75vw" alt="TAS3D 2025, Central Asian University" width="2400" height="1601"></figure>
+        <figure class="ab-ph"><img src="/media/about/tas3d-2025-hall-2400.jpg" srcset="/media/about/tas3d-2025-hall-1200.jpg 1200w, /media/about/tas3d-2025-hall-2400.jpg 2400w" sizes="(max-width:900px) 100vw, 75vw" alt="TAS3D 2025, Central Asian University" width="2400" height="1601"></figure>
         <p class="big" data-t="ab.big"><b>TAS3D</b> — форум в <b>Ташкенте</b><sup>(UZ)</sup> о <b>3D-визуализации в архитектуре</b>. Один день докладов, мастер-классов и разговоров о том, как изображение помогает проекту: от первого эскиза до презентации заказчику. Для <b>архитекторов, визуализаторов, дизайнеров</b> и <span class="acc">девелоперов.</span></p>
         <div class="prose">
         <p data-t="ab.p1">TAS3D — передовой и один из крупнейших форумов в области архитектурной визуализации и искусственного интеллекта. Каждый год мы собираем визуализаторов, архитекторов, дизайнеров, 3D-художников и разработчиков, чтобы обсудить, куда движется индустрия и как новые технологии меняют профессию уже сегодня.</p>
@@ -782,7 +789,7 @@ body{background:var(--bg)}
         <li><a href="https://maps.app.goo.gl/AizKhATxjvJYT1wS7" target="_blank" rel="noopener"><span data-t="ct.addr">Адрес</span><span aria-hidden="true">→</span></a></li>
       </ul>
     </section>
-    <div class="foot"><span>© 2026 TAS3D</span><a href="https://luma.com/i6r44wo4" target="_blank" rel="noopener" style="color:var(--orange)" data-t="h.reg">Регистрация →</a></div>
+    <div class="foot"><span>© 2026 TAS3D</span><a class="after-hide" href="https://luma.com/i6r44wo4" target="_blank" rel="noopener" style="color:var(--orange)" data-t="h.reg">Регистрация →</a></div>
   </main>
 
   <!-- GALLERY -->
@@ -796,7 +803,7 @@ body{background:var(--bg)}
     </section>
     <section class="avid">
       <a class="yt" href="https://www.youtube.com/watch?v=5wCIuZO7chs&amp;t=33s" target="_blank" rel="noopener">
-        <img src="media/archive-2025/youtube-cover.jpg" alt="TAS3D 2025 Film" width="1280" height="720">
+        <img src="/media/archive-2025/youtube-cover.jpg" alt="TAS3D 2025 Film" width="1280" height="720">
         <span class="play" aria-hidden="true"></span>
         <span class="yt-l"><span data-t="ar.vid">Фильм TAS3D 2025</span><span>YouTube →</span></span>
       </a>
@@ -804,42 +811,42 @@ body{background:var(--bg)}
     <section class="gal" aria-label="TAS3D 2025 Tashkent">
       <h3 class="gal-h" data-t="gal.h">TAS3D 2025 Ташкент</h3>
       <div class="agal">
-      <button class="gi" type="button" data-i="0" data-full="media/archive-2025/01-cr5-1520.jpg" style="--ar:1.78"><picture><source srcset="media/archive-2025/thumb/01-cr5-1520.webp" type="image/webp"><img src="media/archive-2025/thumb/01-cr5-1520.jpg" alt="Зал TAS3D 2025 перед началом" width="1100" height="733" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="1" data-full="media/archive-2025/04-cr6-0007.jpg" style="--ar:0.8;--op:61% 50%"><picture><source srcset="media/archive-2025/thumb/04-cr6-0007.webp" type="image/webp"><img src="media/archive-2025/thumb/04-cr6-0007.jpg" alt="Ведущий со сценарием" width="1100" height="733" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="2" data-full="media/archive-2025/03-cr5-1544.jpg" style="--ar:1.5"><picture><source srcset="media/archive-2025/thumb/03-cr5-1544.webp" type="image/webp"><img src="media/archive-2025/thumb/03-cr5-1544.jpg" alt="Зрители в зале" width="1100" height="733" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="3" data-full="media/archive-2025/07-cr6-0063.jpg" style="--ar:0.8;--op:61% 50%"><picture><source srcset="media/archive-2025/thumb/07-cr6-0063.webp" type="image/webp"><img src="media/archive-2025/thumb/07-cr6-0063.jpg" alt="Спикер у презентации" width="1100" height="733" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="4" data-full="media/archive-2025/09-cr6-0100.jpg" style="--ar:0.8;--op:65% 50%"><picture><source srcset="media/archive-2025/thumb/09-cr6-0100.webp" type="image/webp"><img src="media/archive-2025/thumb/09-cr6-0100.jpg" alt="Спикер на фоне зала" width="1100" height="733" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="5" data-full="media/archive-2025/11-cr6-0233.jpg" style="--ar:1.2;--op:25% 50%"><picture><source srcset="media/archive-2025/thumb/11-cr6-0233.webp" type="image/webp"><img src="media/archive-2025/thumb/11-cr6-0233.jpg" alt="Награждение участницы" width="1100" height="733" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="6" data-full="media/archive-2025/05-cr6-0252.jpg" style="--ar:1.33"><picture><source srcset="media/archive-2025/thumb/05-cr6-0252.webp" type="image/webp"><img src="media/archive-2025/thumb/05-cr6-0252.jpg" alt="Демонстрация VR-шлема" width="1100" height="733" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="7" data-full="media/archive-2025/08-cr5-1627.jpg" style="--ar:1.78"><picture><source srcset="media/archive-2025/thumb/08-cr5-1627.webp" type="image/webp"><img src="media/archive-2025/thumb/08-cr5-1627.jpg" alt="Участники и партнёры на сцене" width="1100" height="733" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="8" data-full="media/archive-2025/06-cr6-0288.jpg" style="--ar:1.5"><picture><source srcset="media/archive-2025/thumb/06-cr6-0288.webp" type="image/webp"><img src="media/archive-2025/thumb/06-cr6-0288.jpg" alt="Доклад об архитектурном проекте" width="1100" height="733" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="9" data-full="media/archive-2025/13-cr6-0175.jpg" style="--ar:0.8;--op:48% 50%"><picture><source srcset="media/archive-2025/thumb/13-cr6-0175.webp" type="image/webp"><img src="media/archive-2025/thumb/13-cr6-0175.jpg" alt="Спикер перед экраном" width="1100" height="733" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="10" data-full="media/archive-2025/10-cr6-0132.jpg" style="--ar:1.5"><picture><source srcset="media/archive-2025/thumb/10-cr6-0132.webp" type="image/webp"><img src="media/archive-2025/thumb/10-cr6-0132.jpg" alt="Вопрос из зала" width="1100" height="733" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="11" data-full="media/archive-2025/12-cr5-1704.jpg" style="--ar:1.78"><picture><source srcset="media/archive-2025/thumb/12-cr5-1704.webp" type="image/webp"><img src="media/archive-2025/thumb/12-cr5-1704.jpg" alt="Доклад на большом экране" width="1100" height="733" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="12" data-full="media/archive-2025/15-cr6-0324.jpg" style="--ar:0.8;--op:54% 50%"><picture><source srcset="media/archive-2025/thumb/15-cr6-0324.webp" type="image/webp"><img src="media/archive-2025/thumb/15-cr6-0324.jpg" alt="Спикер на сцене" width="1100" height="733" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="13" data-full="media/archive-2025/02-cr5-1562.jpg" style="--ar:0.8;--op:65% 50%"><picture><source srcset="media/archive-2025/thumb/02-cr5-1562.webp" type="image/webp"><img src="media/archive-2025/thumb/02-cr5-1562.jpg" alt="Спикер на сцене" width="1100" height="733" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="14" data-full="media/archive-2025/14-cr6-0188.jpg" style="--ar:1.7"><picture><source srcset="media/archive-2025/thumb/14-cr6-0188.webp" type="image/webp"><img src="media/archive-2025/thumb/14-cr6-0188.jpg" alt="Слайд «Viz o‘zi nima?»" width="1100" height="733" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="15" data-full="media/archive-2025/16-cr5-1710.jpg" style="--ar:1.78;--op:50% 70%"><picture><source srcset="media/archive-2025/thumb/16-cr5-1710.webp" type="image/webp"><img src="media/archive-2025/thumb/16-cr5-1710.jpg" alt="Общее фото участников TAS3D 2025" width="1100" height="733" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="16" data-full="media/archive-2025/17-cr5-1630.jpg" style="--ar:1.5"><picture><source srcset="media/archive-2025/thumb/17-cr5-1630.webp" type="image/webp"><img src="media/archive-2025/thumb/17-cr5-1630.jpg" alt="Слайд со спикером на большом экране" width="1100" height="734" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="17" data-full="media/archive-2025/18-cr6-0083.jpg" style="--ar:0.8;--op:55% 50%"><picture><source srcset="media/archive-2025/thumb/18-cr6-0083.webp" type="image/webp"><img src="media/archive-2025/thumb/18-cr6-0083.jpg" alt="Спикер на сцене у экрана Archiquad" width="1100" height="734" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="18" data-full="media/archive-2025/19-cr5-1540.jpg" style="--ar:1.78"><picture><source srcset="media/archive-2025/thumb/19-cr5-1540.webp" type="image/webp"><img src="media/archive-2025/thumb/19-cr5-1540.jpg" alt="Зрители в зале" width="1100" height="734" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="19" data-full="media/archive-2025/20-cr5-1648.jpg" style="--ar:1.33;--op:56% 50%"><picture><source srcset="media/archive-2025/thumb/20-cr5-1648.webp" type="image/webp"><img src="media/archive-2025/thumb/20-cr5-1648.jpg" alt="Онлайн-включение спикера на экране" width="1100" height="734" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="20" data-full="media/archive-2025/21-cr5-1679.jpg" style="--ar:1.5"><picture><source srcset="media/archive-2025/thumb/21-cr5-1679.webp" type="image/webp"><img src="media/archive-2025/thumb/21-cr5-1679.jpg" alt="Вручение подарков на сцене" width="1100" height="734" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="21" data-full="media/archive-2025/22-cr5-1629.jpg" style="--ar:1.33;--op:60% 50%"><picture><source srcset="media/archive-2025/thumb/22-cr5-1629.webp" type="image/webp"><img src="media/archive-2025/thumb/22-cr5-1629.jpg" alt="Доклад «Flat Shot vs Immersion»" width="1100" height="734" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="22" data-full="media/archive-2025/23-cr6-0113.jpg" style="--ar:0.8;--op:42% 50%"><picture><source srcset="media/archive-2025/thumb/23-cr6-0113.webp" type="image/webp"><img src="media/archive-2025/thumb/23-cr6-0113.jpg" alt="Вопрос спикеру из зала" width="1100" height="734" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="23" data-full="media/archive-2025/24-cr5-1612.jpg" style="--ar:1.5"><picture><source srcset="media/archive-2025/thumb/24-cr5-1612.webp" type="image/webp"><img src="media/archive-2025/thumb/24-cr5-1612.jpg" alt="Презентация Archiquad в зале" width="1100" height="734" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="24" data-full="media/archive-2025/25-cr6-0156.jpg" style="--ar:0.8;--op:46% 50%"><picture><source srcset="media/archive-2025/thumb/25-cr6-0156.webp" type="image/webp"><img src="media/archive-2025/thumb/25-cr6-0156.jpg" alt="Зрители и вопрос из зала" width="1100" height="734" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="25" data-full="media/archive-2025/26-cr5-1622.jpg" style="--ar:1;--op:66% 50%"><picture><source srcset="media/archive-2025/thumb/26-cr5-1622.webp" type="image/webp"><img src="media/archive-2025/thumb/26-cr5-1622.jpg" alt="Слайд о визуализаторе на экране" width="1100" height="734" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="26" data-full="media/archive-2025/27-cr5-1536.jpg" style="--ar:1.78"><picture><source srcset="media/archive-2025/thumb/27-cr5-1536.webp" type="image/webp"><img src="media/archive-2025/thumb/27-cr5-1536.jpg" alt="Полный зал Central Asian University" width="1100" height="734" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="27" data-full="media/archive-2025/28-cr5-1685.jpg" style="--ar:1.5"><picture><source srcset="media/archive-2025/thumb/28-cr5-1685.webp" type="image/webp"><img src="media/archive-2025/thumb/28-cr5-1685.jpg" alt="Вручение подарков участницам" width="1100" height="734" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="28" data-full="media/archive-2025/29-cr6-0183.jpg" style="--ar:0.8;--op:42% 50%"><picture><source srcset="media/archive-2025/thumb/29-cr6-0183.webp" type="image/webp"><img src="media/archive-2025/thumb/29-cr6-0183.jpg" alt="Спикер на сцене, слайд QILIN" width="1100" height="734" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="29" data-full="media/archive-2025/30-cr5-1699.jpg" style="--ar:1.2"><picture><source srcset="media/archive-2025/thumb/30-cr5-1699.webp" type="image/webp"><img src="media/archive-2025/thumb/30-cr5-1699.jpg" alt="Онлайн-включение спикера в наушниках" width="1100" height="734" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="30" data-full="media/archive-2025/31-cr6-0245.jpg" style="--ar:1.2"><picture><source srcset="media/archive-2025/thumb/31-cr6-0245.webp" type="image/webp"><img src="media/archive-2025/thumb/31-cr6-0245.jpg" alt="Вручение подарка участнику" width="1100" height="906" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="31" data-full="media/archive-2025/32-cr5-1641.jpg" style="--ar:0.8;--op:50% 50%"><picture><source srcset="media/archive-2025/thumb/32-cr5-1641.webp" type="image/webp"><img src="media/archive-2025/thumb/32-cr5-1641.jpg" alt="Слайд «Дерзайте» на сцене" width="1100" height="734" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="32" data-full="media/archive-2025/33-cr6-0259.jpg" style="--ar:0.9;--op:50% 50%"><picture><source srcset="media/archive-2025/thumb/33-cr6-0259.webp" type="image/webp"><img src="media/archive-2025/thumb/33-cr6-0259.jpg" alt="Доклад «Panorama vs 6DOF»" width="1100" height="734" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="33" data-full="media/archive-2025/34-cr6-0327.jpg" style="--ar:1.5"><picture><source srcset="media/archive-2025/thumb/34-cr6-0327.webp" type="image/webp"><img src="media/archive-2025/thumb/34-cr6-0327.jpg" alt="Доклад в светлом зале" width="1100" height="734" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="34" data-full="media/archive-2025/35-cr5-1617.jpg" style="--ar:1.33;--op:40% 50%"><picture><source srcset="media/archive-2025/thumb/35-cr5-1617.webp" type="image/webp"><img src="media/archive-2025/thumb/35-cr5-1617.jpg" alt="Слайд Archiquad на большом экране" width="1100" height="734" loading="lazy"></picture></button>
-      <button class="gi" type="button" data-i="35" data-full="media/archive-2025/36-cr5-1590.jpg" style="--ar:1.5"><picture><source srcset="media/archive-2025/thumb/36-cr5-1590.webp" type="image/webp"><img src="media/archive-2025/thumb/36-cr5-1590.jpg" alt="Зал и партнёры форума на экране" width="1100" height="734" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="0" data-full="/media/archive-2025/01-cr5-1520.jpg" style="--ar:1.78"><picture><source srcset="/media/archive-2025/thumb/01-cr5-1520.webp" type="image/webp"><img src="/media/archive-2025/thumb/01-cr5-1520.jpg" alt="Зал TAS3D 2025 перед началом" width="1100" height="733" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="1" data-full="/media/archive-2025/04-cr6-0007.jpg" style="--ar:0.8;--op:61% 50%"><picture><source srcset="/media/archive-2025/thumb/04-cr6-0007.webp" type="image/webp"><img src="/media/archive-2025/thumb/04-cr6-0007.jpg" alt="Ведущий со сценарием" width="1100" height="733" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="2" data-full="/media/archive-2025/03-cr5-1544.jpg" style="--ar:1.5"><picture><source srcset="/media/archive-2025/thumb/03-cr5-1544.webp" type="image/webp"><img src="/media/archive-2025/thumb/03-cr5-1544.jpg" alt="Зрители в зале" width="1100" height="733" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="3" data-full="/media/archive-2025/07-cr6-0063.jpg" style="--ar:0.8;--op:61% 50%"><picture><source srcset="/media/archive-2025/thumb/07-cr6-0063.webp" type="image/webp"><img src="/media/archive-2025/thumb/07-cr6-0063.jpg" alt="Спикер у презентации" width="1100" height="733" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="4" data-full="/media/archive-2025/09-cr6-0100.jpg" style="--ar:0.8;--op:65% 50%"><picture><source srcset="/media/archive-2025/thumb/09-cr6-0100.webp" type="image/webp"><img src="/media/archive-2025/thumb/09-cr6-0100.jpg" alt="Спикер на фоне зала" width="1100" height="733" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="5" data-full="/media/archive-2025/11-cr6-0233.jpg" style="--ar:1.2;--op:25% 50%"><picture><source srcset="/media/archive-2025/thumb/11-cr6-0233.webp" type="image/webp"><img src="/media/archive-2025/thumb/11-cr6-0233.jpg" alt="Награждение участницы" width="1100" height="733" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="6" data-full="/media/archive-2025/05-cr6-0252.jpg" style="--ar:1.33"><picture><source srcset="/media/archive-2025/thumb/05-cr6-0252.webp" type="image/webp"><img src="/media/archive-2025/thumb/05-cr6-0252.jpg" alt="Демонстрация VR-шлема" width="1100" height="733" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="7" data-full="/media/archive-2025/08-cr5-1627.jpg" style="--ar:1.78"><picture><source srcset="/media/archive-2025/thumb/08-cr5-1627.webp" type="image/webp"><img src="/media/archive-2025/thumb/08-cr5-1627.jpg" alt="Участники и партнёры на сцене" width="1100" height="733" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="8" data-full="/media/archive-2025/06-cr6-0288.jpg" style="--ar:1.5"><picture><source srcset="/media/archive-2025/thumb/06-cr6-0288.webp" type="image/webp"><img src="/media/archive-2025/thumb/06-cr6-0288.jpg" alt="Доклад об архитектурном проекте" width="1100" height="733" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="9" data-full="/media/archive-2025/13-cr6-0175.jpg" style="--ar:0.8;--op:48% 50%"><picture><source srcset="/media/archive-2025/thumb/13-cr6-0175.webp" type="image/webp"><img src="/media/archive-2025/thumb/13-cr6-0175.jpg" alt="Спикер перед экраном" width="1100" height="733" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="10" data-full="/media/archive-2025/10-cr6-0132.jpg" style="--ar:1.5"><picture><source srcset="/media/archive-2025/thumb/10-cr6-0132.webp" type="image/webp"><img src="/media/archive-2025/thumb/10-cr6-0132.jpg" alt="Вопрос из зала" width="1100" height="733" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="11" data-full="/media/archive-2025/12-cr5-1704.jpg" style="--ar:1.78"><picture><source srcset="/media/archive-2025/thumb/12-cr5-1704.webp" type="image/webp"><img src="/media/archive-2025/thumb/12-cr5-1704.jpg" alt="Доклад на большом экране" width="1100" height="733" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="12" data-full="/media/archive-2025/15-cr6-0324.jpg" style="--ar:0.8;--op:54% 50%"><picture><source srcset="/media/archive-2025/thumb/15-cr6-0324.webp" type="image/webp"><img src="/media/archive-2025/thumb/15-cr6-0324.jpg" alt="Спикер на сцене" width="1100" height="733" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="13" data-full="/media/archive-2025/02-cr5-1562.jpg" style="--ar:0.8;--op:65% 50%"><picture><source srcset="/media/archive-2025/thumb/02-cr5-1562.webp" type="image/webp"><img src="/media/archive-2025/thumb/02-cr5-1562.jpg" alt="Спикер на сцене" width="1100" height="733" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="14" data-full="/media/archive-2025/14-cr6-0188.jpg" style="--ar:1.7"><picture><source srcset="/media/archive-2025/thumb/14-cr6-0188.webp" type="image/webp"><img src="/media/archive-2025/thumb/14-cr6-0188.jpg" alt="Слайд «Viz o‘zi nima?»" width="1100" height="733" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="15" data-full="/media/archive-2025/16-cr5-1710.jpg" style="--ar:1.78;--op:50% 70%"><picture><source srcset="/media/archive-2025/thumb/16-cr5-1710.webp" type="image/webp"><img src="/media/archive-2025/thumb/16-cr5-1710.jpg" alt="Общее фото участников TAS3D 2025" width="1100" height="733" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="16" data-full="/media/archive-2025/17-cr5-1630.jpg" style="--ar:1.5"><picture><source srcset="/media/archive-2025/thumb/17-cr5-1630.webp" type="image/webp"><img src="/media/archive-2025/thumb/17-cr5-1630.jpg" alt="Слайд со спикером на большом экране" width="1100" height="734" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="17" data-full="/media/archive-2025/18-cr6-0083.jpg" style="--ar:0.8;--op:55% 50%"><picture><source srcset="/media/archive-2025/thumb/18-cr6-0083.webp" type="image/webp"><img src="/media/archive-2025/thumb/18-cr6-0083.jpg" alt="Спикер на сцене у экрана Archiquad" width="1100" height="734" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="18" data-full="/media/archive-2025/19-cr5-1540.jpg" style="--ar:1.78"><picture><source srcset="/media/archive-2025/thumb/19-cr5-1540.webp" type="image/webp"><img src="/media/archive-2025/thumb/19-cr5-1540.jpg" alt="Зрители в зале" width="1100" height="734" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="19" data-full="/media/archive-2025/20-cr5-1648.jpg" style="--ar:1.33;--op:56% 50%"><picture><source srcset="/media/archive-2025/thumb/20-cr5-1648.webp" type="image/webp"><img src="/media/archive-2025/thumb/20-cr5-1648.jpg" alt="Онлайн-включение спикера на экране" width="1100" height="734" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="20" data-full="/media/archive-2025/21-cr5-1679.jpg" style="--ar:1.5"><picture><source srcset="/media/archive-2025/thumb/21-cr5-1679.webp" type="image/webp"><img src="/media/archive-2025/thumb/21-cr5-1679.jpg" alt="Вручение подарков на сцене" width="1100" height="734" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="21" data-full="/media/archive-2025/22-cr5-1629.jpg" style="--ar:1.33;--op:60% 50%"><picture><source srcset="/media/archive-2025/thumb/22-cr5-1629.webp" type="image/webp"><img src="/media/archive-2025/thumb/22-cr5-1629.jpg" alt="Доклад «Flat Shot vs Immersion»" width="1100" height="734" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="22" data-full="/media/archive-2025/23-cr6-0113.jpg" style="--ar:0.8;--op:42% 50%"><picture><source srcset="/media/archive-2025/thumb/23-cr6-0113.webp" type="image/webp"><img src="/media/archive-2025/thumb/23-cr6-0113.jpg" alt="Вопрос спикеру из зала" width="1100" height="734" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="23" data-full="/media/archive-2025/24-cr5-1612.jpg" style="--ar:1.5"><picture><source srcset="/media/archive-2025/thumb/24-cr5-1612.webp" type="image/webp"><img src="/media/archive-2025/thumb/24-cr5-1612.jpg" alt="Презентация Archiquad в зале" width="1100" height="734" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="24" data-full="/media/archive-2025/25-cr6-0156.jpg" style="--ar:0.8;--op:46% 50%"><picture><source srcset="/media/archive-2025/thumb/25-cr6-0156.webp" type="image/webp"><img src="/media/archive-2025/thumb/25-cr6-0156.jpg" alt="Зрители и вопрос из зала" width="1100" height="734" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="25" data-full="/media/archive-2025/26-cr5-1622.jpg" style="--ar:1;--op:66% 50%"><picture><source srcset="/media/archive-2025/thumb/26-cr5-1622.webp" type="image/webp"><img src="/media/archive-2025/thumb/26-cr5-1622.jpg" alt="Слайд о визуализаторе на экране" width="1100" height="734" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="26" data-full="/media/archive-2025/27-cr5-1536.jpg" style="--ar:1.78"><picture><source srcset="/media/archive-2025/thumb/27-cr5-1536.webp" type="image/webp"><img src="/media/archive-2025/thumb/27-cr5-1536.jpg" alt="Полный зал Central Asian University" width="1100" height="734" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="27" data-full="/media/archive-2025/28-cr5-1685.jpg" style="--ar:1.5"><picture><source srcset="/media/archive-2025/thumb/28-cr5-1685.webp" type="image/webp"><img src="/media/archive-2025/thumb/28-cr5-1685.jpg" alt="Вручение подарков участницам" width="1100" height="734" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="28" data-full="/media/archive-2025/29-cr6-0183.jpg" style="--ar:0.8;--op:42% 50%"><picture><source srcset="/media/archive-2025/thumb/29-cr6-0183.webp" type="image/webp"><img src="/media/archive-2025/thumb/29-cr6-0183.jpg" alt="Спикер на сцене, слайд QILIN" width="1100" height="734" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="29" data-full="/media/archive-2025/30-cr5-1699.jpg" style="--ar:1.2"><picture><source srcset="/media/archive-2025/thumb/30-cr5-1699.webp" type="image/webp"><img src="/media/archive-2025/thumb/30-cr5-1699.jpg" alt="Онлайн-включение спикера в наушниках" width="1100" height="734" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="30" data-full="/media/archive-2025/31-cr6-0245.jpg" style="--ar:1.2"><picture><source srcset="/media/archive-2025/thumb/31-cr6-0245.webp" type="image/webp"><img src="/media/archive-2025/thumb/31-cr6-0245.jpg" alt="Вручение подарка участнику" width="1100" height="906" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="31" data-full="/media/archive-2025/32-cr5-1641.jpg" style="--ar:0.8;--op:50% 50%"><picture><source srcset="/media/archive-2025/thumb/32-cr5-1641.webp" type="image/webp"><img src="/media/archive-2025/thumb/32-cr5-1641.jpg" alt="Слайд «Дерзайте» на сцене" width="1100" height="734" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="32" data-full="/media/archive-2025/33-cr6-0259.jpg" style="--ar:0.9;--op:50% 50%"><picture><source srcset="/media/archive-2025/thumb/33-cr6-0259.webp" type="image/webp"><img src="/media/archive-2025/thumb/33-cr6-0259.jpg" alt="Доклад «Panorama vs 6DOF»" width="1100" height="734" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="33" data-full="/media/archive-2025/34-cr6-0327.jpg" style="--ar:1.5"><picture><source srcset="/media/archive-2025/thumb/34-cr6-0327.webp" type="image/webp"><img src="/media/archive-2025/thumb/34-cr6-0327.jpg" alt="Доклад в светлом зале" width="1100" height="734" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="34" data-full="/media/archive-2025/35-cr5-1617.jpg" style="--ar:1.33;--op:40% 50%"><picture><source srcset="/media/archive-2025/thumb/35-cr5-1617.webp" type="image/webp"><img src="/media/archive-2025/thumb/35-cr5-1617.jpg" alt="Слайд Archiquad на большом экране" width="1100" height="734" loading="lazy"></picture></button>
+      <button class="gi" type="button" data-i="35" data-full="/media/archive-2025/36-cr5-1590.jpg" style="--ar:1.5"><picture><source srcset="/media/archive-2025/thumb/36-cr5-1590.webp" type="image/webp"><img src="/media/archive-2025/thumb/36-cr5-1590.jpg" alt="Зал и партнёры форума на экране" width="1100" height="734" loading="lazy"></picture></button>
       </div>
       <p class="amore"><a href="https://drive.google.com/drive/folders/1lZOJY6GOSNlPPcEypep-JzIY0N3KchkF" target="_blank" rel="noopener" data-t="ar.more">Посмотреть все →</a></p>
     </section>
@@ -847,7 +854,7 @@ body{background:var(--bg)}
   </main>
 </div>
 
-<a class="mreg" id="mreg" href="https://luma.com/i6r44wo4" target="_blank" rel="noopener"><span data-t="mreg">Регистрация</span><span class="mreg-d">03.12.2026</span><span aria-hidden="true">→</span></a>
+<a class="mreg after-hide" id="mreg" href="https://luma.com/i6r44wo4" target="_blank" rel="noopener"><span data-t="mreg">Регистрация</span><span class="mreg-d">03.12.2026</span><span aria-hidden="true">→</span></a>
 <div class="cursor" aria-hidden="true"><span></span></div>
 <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="TAS3D 2025">
   <img class="lb-img" id="lbImg" alt="">
@@ -951,6 +958,8 @@ body{background:var(--bg)}
   Object.assign(window.TAS3D_I18N, {
     'nav.arch': ['Gallery', 'Galereya'],
     'prt.title': ['Partners', 'Hamkorlar'],
+    'hello.thx': ['Thank you', 'Rahmat'],
+    'thx.tg': ['Photos and videos on Telegram', 'Surat va videolar — Telegramda'],
     'mreg': ['Registration', 'Ro‘yxatdan o‘tish'],
     'ar.title': ['Gallery', 'Galereya'],
     'gal.h': ['TAS3D 2025 Tashkent', 'TAS3D 2025 Toshkent'],
@@ -977,6 +986,12 @@ body{background:var(--bg)}
     'sp.soon': ['Photo coming soon', 'Surat tez orada']
   });
 })();
+// <title> and description for each language
+window.TAS3D_HEAD = {
+  ru: ['TAS3D 2026 — форум о 3D-визуализации в архитектуре', 'TAS3D — форум о 3D-визуализации в архитектуре. Ташкент, 03.12.2026.'],
+  en: ['TAS3D 2026 — Tashkent architecture visualisation forum', 'TAS3D is a forum on 3D visualisation in architecture. Tashkent, 03.12.2026.'],
+  uz: ['TAS3D 2026 — arxitekturada 3D-vizualizatsiya bo‘yicha forum', 'TAS3D — arxitekturada 3D-vizualizatsiya bo‘yicha forum. Toshkent, 03.12.2026.']
+};
 
 </script>
 <script>
@@ -990,7 +1005,9 @@ body{background:var(--bg)}
   var LI = { ru: -1, en: 0, uz: 1 };
   var nodes = [].slice.call(document.querySelectorAll('[data-t]'));
   var RU = {};
-  nodes.forEach(function (n) { var k = n.getAttribute('data-t'); if (!(k in RU)) RU[k] = n.innerHTML; });
+  // on /en/ and /uz/ the markup is already translated, so the Russian text comes from window.TAS3D_RU
+  var RU0 = window.TAS3D_RU || null;
+  nodes.forEach(function (n) { var k = n.getAttribute('data-t'); if (!(k in RU)) RU[k] = (RU0 && k in RU0) ? RU0[k] : n.innerHTML; });
   var lang = 'ru';
   function msg(k) { var a = D[k]; return lang === 'ru' ? a[0] : lang === 'en' ? a[1] : a[2]; }
 
@@ -1007,13 +1024,22 @@ body{background:var(--bg)}
     });
     if (typeof current !== 'undefined' && current !== 'home') flapTitle(current, true);
     if (typeof heroLang === 'function') heroLang();
+    var H = window.TAS3D_HEAD && window.TAS3D_HEAD[l];
+    if (H) { document.title = H[0]; var md = document.querySelector('meta[name="description"]'); if (md) md.setAttribute('content', H[1]); }
+    // each language has its own address: /, /en/, /uz/
+    var path = l === 'ru' ? '/' : '/' + l + '/';
+    if (/^https?:$/.test(location.protocol) && /^\/((en|uz)\/?)?(index\.html)?$/.test(location.pathname) && location.pathname !== path) {
+      try { history.replaceState(null, '', path + location.search + location.hash); } catch (e) {}
+    }
     try { localStorage.setItem('tas3d-lang', l); } catch (e) {}
   }
   document.querySelectorAll('.lang button').forEach(function (b) {
     b.addEventListener('click', function () { setLang(b.getAttribute('data-lang')); });
   });
+  var PAGE = window.TAS3D_PAGE_LANG || 'ru';
   var saved = null; try { saved = localStorage.getItem('tas3d-lang'); } catch (e) {}
-  setLang(saved || 'ru');
+  // the address decides the language; on the main address a language chosen earlier is restored
+  setLang(PAGE === 'ru' && (saved === 'en' || saved === 'uz') ? saved : PAGE);
 
   // Layered scroll: the dark block slides over the pinned light block
   var root = document.documentElement;
@@ -1389,6 +1415,19 @@ body{background:var(--bg)}
   window.addEventListener('scroll', function () { if (!mtick) { mtick = true; requestAnimationFrame(mregUpdate); } }, { passive: true });
   window.addEventListener('hashchange', function () { regIn = false; setTimeout(mregUpdate, 50); });
   mregUpdate();
+
+  // After the forum (03.12.2026, 19:00 in Tashkent) the registration block shows a thank-you note,
+  // the phone button and the registration link on About disappear
+  var END = Date.UTC(2026, 11, 3, 14, 0, 0);
+  function afterCheck() {
+    if (Date.now() < END) return false;
+    root.classList.add('after');
+    document.querySelectorAll('.after-hide').forEach(function (el) { el.hidden = true; });
+    document.querySelectorAll('.after-show').forEach(function (el) { el.hidden = false; });
+    if (typeof heroLang === 'function') heroLang();
+    return true;
+  }
+  if (!afterCheck()) { var afterT = setInterval(function () { if (afterCheck()) clearInterval(afterT); }, 30000); }
 })();
 
 </script>

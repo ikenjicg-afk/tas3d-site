@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>404 — TAS3D</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0e0e0e">
+<style>
+/* TAS3D — page not found. Same look as the dark pages of the site. */
+@font-face{font-family:"HelvTAS";src:url(/fonts/helvtas-400.woff) format("woff");font-weight:400;font-style:normal;font-display:swap}
+:root{--bg:#0e0e0e;--fg:#f1f1ee;--mute:#8b8b87;--line:#1c1c1c;--orange:#f0552a;--blue:#6b7fff;--pad:max(22px,env(safe-area-inset-left,0px));--padr:max(22px,env(safe-area-inset-right,0px));--gap:28px;color-scheme:dark}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;padding:30px var(--padr) clamp(48px,6vw,96px) var(--pad);background:var(--bg);color:var(--fg);font-family:"HelvTAS",Helvetica,Arial,sans-serif;line-height:1.4;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.cols{position:fixed;inset:0;padding:0 var(--padr) 0 var(--pad);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);pointer-events:none;z-index:0}
+.cols i{border-left:1px solid var(--line);border-right:1px solid var(--line)}
+.w{position:relative;z-index:1;flex:1;display:flex;flex-direction:column}
+.logo{display:block;width:clamp(104px,9vw,164px);aspect-ratio:900/212;background:var(--fg);-webkit-mask:url(/media/logo-tas3d.png) center/contain no-repeat;mask:url(/media/logo-tas3d.png) center/contain no-repeat}
+.big{margin-top:auto;padding-top:clamp(60px,10vw,160px);font-size:clamp(120px,31vw,560px);line-height:.78;letter-spacing:-.06em;margin-left:-.04em}
+h1{margin:clamp(36px,5vw,96px) 0 0;font-weight:400;font-size:clamp(28px,3.2vw,56px);line-height:1.05;letter-spacing:-.035em}
+p{margin:12px 0 0;max-width:42ch;color:var(--mute);font-size:clamp(16px,1.3vw,20px)}
+.home{display:inline-block;margin-top:clamp(28px,3vw,48px);color:var(--orange);font-size:clamp(22px,2.2vw,36px);letter-spacing:-.02em;transition:color .2s}
+.home:hover{color:var(--fg)}
+@media (max-width:900px){
+  :root{--gap:16px;--pad:max(16px,env(safe-area-inset-left,0px));--padr:max(16px,env(safe-area-inset-right,0px))}
+  body{padding-top:20px}
+  .cols{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .cols i:nth-child(n+5){display:none}
+}
+</style>
+</head>
+<body>
+<div class="cols" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<main class="w">
+  <a class="logo" href="/" aria-label="TAS3D"></a>
+  <div class="big" aria-hidden="true">404</div>
+  <h1 data-k="h">Страница не найдена</h1>
+  <p data-k="p">Такой страницы на сайте нет. Возможно, ссылка устарела.</p>
+  <a class="home" href="/" data-k="a">На главную →</a>
+</main>
+<script>
+// Language: from the address (/en/…, /uz/…) or the one chosen earlier on the site
+(function () {
+  var T = {
+    en: { h: 'Page not found', p: 'There is no such page on this site. The link may be out of date.', a: 'Go to the homepage →', home: '/en/' },
+    uz: { h: 'Sahifa topilmadi', p: 'Saytda bunday sahifa yo‘q. Havola eskirgan bo‘lishi mumkin.', a: 'Bosh sahifaga →', home: '/uz/' }
+  };
+  var m = location.pathname.match(/^\/(en|uz)(\/|$)/), l = m ? m[1] : null;
+  if (!l) { try { l = localStorage.getItem('tas3d-lang'); } catch (e) {} }
+  var t = T[l]; if (!t) return;
+  document.documentElement.lang = l;
+  ['h', 'p', 'a'].forEach(function (k) { document.querySelector('[data-k="' + k + '"]').textContent = t[k]; });
+  document.querySelectorAll('a[href="/"]').forEach(function (a) { a.setAttribute('href', t.home); });
+})();
+</script>
+</body>
+</html>
