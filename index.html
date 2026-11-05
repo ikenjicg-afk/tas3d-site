@@ -14,6 +14,7 @@
 <meta property="og:image" content="media/tas3d-2025-poster.jpg">
 <meta name="theme-color" content="#0e0e0e">
 <link rel="preload" href="media/tas3d-2025-poster.jpg" as="image">
+<link rel="preload" href="media/logo-tas3d.png" as="image">
 <style>
 /* TAS3D 2026 — styles
    Tokens (colours, grid gap, gutters) live in :root. Dark layer tokens: .dk and html.night. Hero video: .hv */
@@ -381,7 +382,7 @@ body{background:color-mix(in srgb,#000 calc(var(--pg,0) * 50%),var(--bg))}
 .yt:hover .play{transform:translate(-50%,-50%) scale(1.08)}
 .yt-l{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;gap:16px;padding:clamp(12px,1.4vw,22px);font-size:clamp(14px,1.2vw,19px);text-transform:uppercase;letter-spacing:.02em;background:linear-gradient(transparent,rgba(0,0,0,.55))}
 .agal{margin-top:var(--gap);row-gap:var(--gap)}
-.gi{grid-column:span 3;display:block;padding:0;border:0;background:#1b1b1b;aspect-ratio:3/2;max-width:100%;overflow:hidden;cursor:pointer}
+.gi{display:block;padding:0;border:0;background:#1b1b1b;aspect-ratio:3/2;max-width:100%;overflow:hidden;cursor:pointer}
 .gi img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1),filter .4s}
 .gi:hover img{transform:scale(1.04)}
 .gi:focus-visible{outline-offset:2px}
@@ -397,7 +398,6 @@ body{background:color-mix(in srgb,#000 calc(var(--pg,0) * 50%),var(--bg))}
 .lb-n{right:max(4px,env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%)}
 .lb-c{position:absolute;left:max(22px,env(safe-area-inset-left,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));color:#8b8b87;font-size:14px;letter-spacing:.04em;font-variant-numeric:tabular-nums}
 @media (max-width:900px){
-  .gi{grid-column:span 6}
   .lb-p,.lb-n{top:auto;bottom:calc(8px + env(safe-area-inset-bottom,0px));transform:none}
   .lb-p{left:auto;right:64px}
 }
@@ -527,6 +527,27 @@ body{background:var(--bg)}
 .faq-yr{margin:0 0 clamp(14px,1.4vw,22px);font-size:clamp(20px,2vw,32px);letter-spacing:-.02em;line-height:1.05}
 .list li span{line-height:1.4;max-width:58ch}
 @media (max-width:900px){.list li{gap:8px}}
+
+/* v22: logo in the header; gallery (album heading + photo rows of different widths); 6 speakers, 3 per row */
+.brand .logo{display:block;width:clamp(104px,9vw,164px);aspect-ratio:900/212;background-color:currentColor;-webkit-mask:url(media/logo-tas3d.png) center/contain no-repeat;mask:url(media/logo-tas3d.png) center/contain no-repeat}
+.gal-h{margin-top:clamp(44px,5.4vw,92px);font-size:clamp(24px,2.5vw,42px);font-weight:700;letter-spacing:-.035em;line-height:1}
+/* rows: every tile has the same height; its width follows --ar (tile shape), and the row stretches to the full width */
+.agal{--rh:calc((100vw - var(--pad) - var(--padr) - 2 * var(--gap)) / 4.4);display:flex;flex-wrap:wrap;gap:var(--gap);margin-top:clamp(32px,4vw,64px)}
+.agal::after{content:"";flex:999 1 0}
+.gi{flex:calc(var(--ar, 1.5) * 100) 1 calc(var(--ar, 1.5) * var(--rh));height:var(--rh);aspect-ratio:auto;min-width:0}
+.gi img{object-position:var(--op, 50% 50%)}
+@media (max-width:820px){
+  .agal{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .agal::after{display:none}
+  .gi{height:auto;aspect-ratio:6/5}
+  .gi:nth-child(5n+1){grid-column:1/-1;aspect-ratio:3/2}
+}
+.spk2{grid-template-columns:repeat(3,minmax(0,1fr))}
+.sp-ph.sp-tbd span{font-size:clamp(40px,5vw,88px)}
+@media (max-width:900px){
+  .spk2{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:36px}
+  .sp h3{overflow-wrap:anywhere}
+}
 </style>
 </head>
 <body>
@@ -543,12 +564,12 @@ body{background:var(--bg)}
     <div class="cd-u"><span class="cd-n" id="cdS"></span><span class="cd-l" data-t="cd.s">Секунд</span></div>
   </div>
   <header class="head g12">
-    <a class="brand" href="#home">
-      <b>TAS3D</b>
+    <a class="brand" href="#home" aria-label="TAS3D">
+      <i class="logo" aria-hidden="true"></i>
     </a>
     <nav class="nav" aria-label="Menu">
       <a href="#about" data-v="about" data-t="nav.about">О нас</a>
-      <a href="#archive-2025" data-v="archive-2025" data-t="nav.arch">Архив 2025</a>
+      <a href="#gallery" data-v="gallery" data-t="nav.arch">Галерея</a>
     </nav>
     <div class="lang" role="group" aria-label="Язык / Language / Til">
       <button type="button" data-lang="ru" aria-pressed="true">RU</button>
@@ -652,6 +673,8 @@ body{background:var(--bg)}
         <article class="sp"><div class="sp-ph sp-tbd"><span>TBD</span></div><h3>TBD</h3><p class="sp-r" data-t="tbd">Скоро объявим</p></article>
         <article class="sp"><div class="sp-ph sp-tbd"><span>TBD</span></div><h3>TBD</h3><p class="sp-r" data-t="tbd">Скоро объявим</p></article>
         <article class="sp"><div class="sp-ph sp-tbd"><span>TBD</span></div><h3>TBD</h3><p class="sp-r" data-t="tbd">Скоро объявим</p></article>
+        <article class="sp"><div class="sp-ph sp-tbd"><span>TBD</span></div><h3>TBD</h3><p class="sp-r" data-t="tbd">Скоро объявим</p></article>
+        <article class="sp"><div class="sp-ph sp-tbd"><span>TBD</span></div><h3>TBD</h3><p class="sp-r" data-t="tbd">Скоро объявим</p></article>
       </div>
     </section>
     <template id="tpl-speakers">
@@ -662,6 +685,8 @@ body{background:var(--bg)}
         <article class="sp"><div class="sp-ph"><img src="media/speakers/artem-kupriianenko.jpg" alt="" width="1200" height="1200" loading="lazy"></div><h3 data-t="sp2.n">Артем Куприяненко</h3><p class="sp-r" data-t="sp2.r">Основатель Omegarender</p><p class="sp-t" data-t="spk.t"><span class="ph-in">[тема доклада]</span></p></article>
         <article class="sp"><div class="sp-ph empty"><span class="tag" data-t="sp.soon">Фото скоро</span></div><h3>D5 Render</h3><p class="sp-r" data-t="sp3.r"><span class="ph-in">[имя спикера, должность]</span></p><p class="sp-t" data-t="spk.t"><span class="ph-in">[тема доклада]</span></p></article>
         <article class="sp"><div class="sp-ph empty"><span class="tag" data-t="sp.soon">Фото скоро</span></div><h3 data-t="sp4.n">Влад</h3><p class="sp-r" data-t="sp4.r">Арт-директор Omegarender</p><p class="sp-t" data-t="spk.t"><span class="ph-in">[тема доклада]</span></p></article>
+        <article class="sp"><div class="sp-ph sp-tbd"><span>TBD</span></div><h3>TBD</h3><p class="sp-r" data-t="tbd">Скоро объявим</p></article>
+        <article class="sp"><div class="sp-ph sp-tbd"><span>TBD</span></div><h3>TBD</h3><p class="sp-r" data-t="tbd">Скоро объявим</p></article>
       </div>
     </section>
     </template>
@@ -678,7 +703,6 @@ body{background:var(--bg)}
         <details><summary data-t="faq.q5">Сколько будет длиться TAS3D 2026?</summary><p data-t="faq.a5">Примерно 4–6 часов.</p></details>
         <details><summary data-t="faq.q6">На каком языке пройдёт форум?</summary><p data-t="faq.a6">На русском и английском. Доклады англоязычных спикеров будут с переводчиком.</p></details>
         <details><summary data-t="faq.q7">Нужно ли что-то брать с собой?</summary><p data-t="faq.a7">Только QR-код. После регистрации Luma пришлёт его вам: сохраните и покажите на входе. Больше ничего не нужно, главное — приходите сами.</p></details>
-        <details><summary data-t="faq.q8">А я классный человек?</summary><p data-t="faq.a8">Да, несомненно.</p></details>
         </div>
       </div>
     </section>
@@ -725,9 +749,31 @@ body{background:var(--bg)}
     <div class="foot"><span>© 2026 TAS3D</span><a href="https://luma.com/i6r44wo4" target="_blank" rel="noopener" style="color:var(--orange)" data-t="h.reg">Регистрация →</a></div>
   </main>
 
-  <!-- ARCHIVE 2025 -->
-  <main class="view" data-view="archive-2025" hidden>
-    <h2 class="ptitle"><span class="pt" data-t="ar.title">Архив</span><span class="yr">2025</span></h2>
+  <!-- GALLERY -->
+  <main class="view" data-view="gallery" hidden>
+    <h2 class="ptitle"><span class="pt" data-t="ar.title">Галерея</span></h2>
+    <section class="gal" aria-label="TAS3D 2025 Tashkent">
+      <h3 class="gal-h" data-t="gal.h">TAS3D 2025 Ташкент</h3>
+      <div class="agal">
+      <button class="gi" type="button" data-i="0" data-full="media/archive-2025/01-cr5-1520.jpg" style="--ar:1.78"><img src="media/archive-2025/thumb/01-cr5-1520.jpg" alt="Зал TAS3D 2025 перед началом" width="1100" height="733" loading="lazy"></button>
+      <button class="gi" type="button" data-i="1" data-full="media/archive-2025/04-cr6-0007.jpg" style="--ar:0.8;--op:61% 50%"><img src="media/archive-2025/thumb/04-cr6-0007.jpg" alt="Ведущий со сценарием" width="1100" height="733" loading="lazy"></button>
+      <button class="gi" type="button" data-i="2" data-full="media/archive-2025/03-cr5-1544.jpg" style="--ar:1.5"><img src="media/archive-2025/thumb/03-cr5-1544.jpg" alt="Зрители в зале" width="1100" height="733" loading="lazy"></button>
+      <button class="gi" type="button" data-i="3" data-full="media/archive-2025/07-cr6-0063.jpg" style="--ar:0.8;--op:61% 50%"><img src="media/archive-2025/thumb/07-cr6-0063.jpg" alt="Спикер у презентации" width="1100" height="733" loading="lazy"></button>
+      <button class="gi" type="button" data-i="4" data-full="media/archive-2025/09-cr6-0100.jpg" style="--ar:0.8;--op:65% 50%"><img src="media/archive-2025/thumb/09-cr6-0100.jpg" alt="Спикер на фоне зала" width="1100" height="733" loading="lazy"></button>
+      <button class="gi" type="button" data-i="5" data-full="media/archive-2025/11-cr6-0233.jpg" style="--ar:1.2;--op:25% 50%"><img src="media/archive-2025/thumb/11-cr6-0233.jpg" alt="Награждение участницы" width="1100" height="733" loading="lazy"></button>
+      <button class="gi" type="button" data-i="6" data-full="media/archive-2025/05-cr6-0252.jpg" style="--ar:1.33"><img src="media/archive-2025/thumb/05-cr6-0252.jpg" alt="Демонстрация VR-шлема" width="1100" height="733" loading="lazy"></button>
+      <button class="gi" type="button" data-i="7" data-full="media/archive-2025/08-cr5-1627.jpg" style="--ar:1.78"><img src="media/archive-2025/thumb/08-cr5-1627.jpg" alt="Участники и партнёры на сцене" width="1100" height="733" loading="lazy"></button>
+      <button class="gi" type="button" data-i="8" data-full="media/archive-2025/06-cr6-0288.jpg" style="--ar:1.5"><img src="media/archive-2025/thumb/06-cr6-0288.jpg" alt="Доклад об архитектурном проекте" width="1100" height="733" loading="lazy"></button>
+      <button class="gi" type="button" data-i="9" data-full="media/archive-2025/13-cr6-0175.jpg" style="--ar:0.8;--op:48% 50%"><img src="media/archive-2025/thumb/13-cr6-0175.jpg" alt="Спикер перед экраном" width="1100" height="733" loading="lazy"></button>
+      <button class="gi" type="button" data-i="10" data-full="media/archive-2025/10-cr6-0132.jpg" style="--ar:1.5"><img src="media/archive-2025/thumb/10-cr6-0132.jpg" alt="Вопрос из зала" width="1100" height="733" loading="lazy"></button>
+      <button class="gi" type="button" data-i="11" data-full="media/archive-2025/12-cr5-1704.jpg" style="--ar:1.78"><img src="media/archive-2025/thumb/12-cr5-1704.jpg" alt="Доклад на большом экране" width="1100" height="733" loading="lazy"></button>
+      <button class="gi" type="button" data-i="12" data-full="media/archive-2025/15-cr6-0324.jpg" style="--ar:0.8;--op:54% 50%"><img src="media/archive-2025/thumb/15-cr6-0324.jpg" alt="Спикер на сцене" width="1100" height="733" loading="lazy"></button>
+      <button class="gi" type="button" data-i="13" data-full="media/archive-2025/02-cr5-1562.jpg" style="--ar:0.8;--op:65% 50%"><img src="media/archive-2025/thumb/02-cr5-1562.jpg" alt="Спикер на сцене" width="1100" height="733" loading="lazy"></button>
+      <button class="gi" type="button" data-i="14" data-full="media/archive-2025/14-cr6-0188.jpg" style="--ar:1.7"><img src="media/archive-2025/thumb/14-cr6-0188.jpg" alt="Слайд «Viz o‘zi nima?»" width="1100" height="733" loading="lazy"></button>
+      <button class="gi" type="button" data-i="15" data-full="media/archive-2025/16-cr5-1710.jpg" style="--ar:1.78;--op:50% 70%"><img src="media/archive-2025/thumb/16-cr5-1710.jpg" alt="Общее фото участников TAS3D 2025" width="1100" height="733" loading="lazy"></button>
+      </div>
+      <p class="amore"><a href="https://drive.google.com/drive/folders/1lZOJY6GOSNlPPcEypep-JzIY0N3KchkF" target="_blank" rel="noopener" data-t="ar.more">Посмотреть все →</a></p>
+    </section>
     <section class="afacts g12">
       <div><p class="lab" data-t="ar.f1">Участников</p><p class="val">250–350</p></div>
       <div><p class="lab" data-t="ar.f2">Доклады</p><p class="val" data-t="ar.v2">5 часов</p></div>
@@ -741,25 +787,6 @@ body{background:var(--bg)}
         <span class="yt-l"><span data-t="ar.vid">Фильм TAS3D 2025</span><span>YouTube →</span></span>
       </a>
     </section>
-    <section class="agal g12" aria-label="TAS3D 2025">
-      <button class="gi" type="button" data-i="0" data-full="media/archive-2025/01-cr5-1520.jpg"><img src="media/archive-2025/thumb/01-cr5-1520.jpg" alt="Зал TAS3D 2025 перед началом" width="720" height="480" loading="lazy"></button>
-      <button class="gi" type="button" data-i="1" data-full="media/archive-2025/02-cr5-1562.jpg"><img src="media/archive-2025/thumb/02-cr5-1562.jpg" alt="Спикер на сцене" width="720" height="480" loading="lazy"></button>
-      <button class="gi" type="button" data-i="2" data-full="media/archive-2025/03-cr5-1544.jpg"><img src="media/archive-2025/thumb/03-cr5-1544.jpg" alt="Зрители в зале" width="720" height="480" loading="lazy"></button>
-      <button class="gi" type="button" data-i="3" data-full="media/archive-2025/04-cr6-0007.jpg"><img src="media/archive-2025/thumb/04-cr6-0007.jpg" alt="Ведущий со сценарием" width="720" height="480" loading="lazy"></button>
-      <button class="gi" type="button" data-i="4" data-full="media/archive-2025/05-cr6-0252.jpg"><img src="media/archive-2025/thumb/05-cr6-0252.jpg" alt="Демонстрация VR-шлема" width="720" height="480" loading="lazy"></button>
-      <button class="gi" type="button" data-i="5" data-full="media/archive-2025/06-cr6-0288.jpg"><img src="media/archive-2025/thumb/06-cr6-0288.jpg" alt="Доклад об архитектурном проекте" width="720" height="480" loading="lazy"></button>
-      <button class="gi" type="button" data-i="6" data-full="media/archive-2025/07-cr6-0063.jpg"><img src="media/archive-2025/thumb/07-cr6-0063.jpg" alt="Спикер у презентации" width="720" height="480" loading="lazy"></button>
-      <button class="gi" type="button" data-i="7" data-full="media/archive-2025/08-cr5-1627.jpg"><img src="media/archive-2025/thumb/08-cr5-1627.jpg" alt="Участники и партнёры на сцене" width="720" height="480" loading="lazy"></button>
-      <button class="gi" type="button" data-i="8" data-full="media/archive-2025/09-cr6-0100.jpg"><img src="media/archive-2025/thumb/09-cr6-0100.jpg" alt="Спикер на фоне зала" width="720" height="480" loading="lazy"></button>
-      <button class="gi" type="button" data-i="9" data-full="media/archive-2025/10-cr6-0132.jpg"><img src="media/archive-2025/thumb/10-cr6-0132.jpg" alt="Вопрос из зала" width="720" height="480" loading="lazy"></button>
-      <button class="gi" type="button" data-i="10" data-full="media/archive-2025/11-cr6-0233.jpg"><img src="media/archive-2025/thumb/11-cr6-0233.jpg" alt="Награждение участницы" width="720" height="480" loading="lazy"></button>
-      <button class="gi" type="button" data-i="11" data-full="media/archive-2025/12-cr5-1704.jpg"><img src="media/archive-2025/thumb/12-cr5-1704.jpg" alt="Доклад на большом экране" width="720" height="480" loading="lazy"></button>
-      <button class="gi" type="button" data-i="12" data-full="media/archive-2025/13-cr6-0175.jpg"><img src="media/archive-2025/thumb/13-cr6-0175.jpg" alt="Спикер перед экраном" width="720" height="480" loading="lazy"></button>
-      <button class="gi" type="button" data-i="13" data-full="media/archive-2025/14-cr6-0188.jpg"><img src="media/archive-2025/thumb/14-cr6-0188.jpg" alt="Слайд «Viz o‘zi nima?»" width="720" height="480" loading="lazy"></button>
-      <button class="gi" type="button" data-i="14" data-full="media/archive-2025/15-cr6-0324.jpg"><img src="media/archive-2025/thumb/15-cr6-0324.jpg" alt="Спикер на сцене" width="720" height="480" loading="lazy"></button>
-      <button class="gi" type="button" data-i="15" data-full="media/archive-2025/16-cr5-1710.jpg"><img src="media/archive-2025/thumb/16-cr5-1710.jpg" alt="Общее фото участников TAS3D 2025" width="720" height="480" loading="lazy"></button>
-    </section>
-    <p class="amore"><a href="https://drive.google.com/drive/folders/1lZOJY6GOSNlPPcEypep-JzIY0N3KchkF" target="_blank" rel="noopener" data-t="ar.more">Посмотреть все →</a></p>
     <div class="foot"><a href="#home" data-t="ar.back">← Форум 2026</a><span>© 2026 TAS3D</span></div>
   </main>
 </div>
@@ -824,7 +851,6 @@ body{background:var(--bg)}
     'faq.q5':['How long will TAS3D 2026 last?','TAS3D 2026 qancha davom etadi?'],'faq.a5':['About 4–6 hours.','Taxminan 4–6 soat.'],
     'faq.q6':['What language will the forum be in?','Forum qaysi tilda o‘tadi?'],'faq.a6':['Russian and English. Talks by English-speaking speakers will be interpreted.','Rus va ingliz tillarida. Ingliz tilida so‘zlovchi spikerlarning ma’ruzalari tarjimon bilan bo‘ladi.'],
     'faq.q7':['Do I need to bring anything?','O‘zim bilan biror narsa olib kelishim kerakmi?'],'faq.a7':['Just your QR code. Luma will send it to you after you register: save it and show it at the entrance. Nothing else is needed, just come.','Faqat QR-kod. Ro‘yxatdan o‘tganingizdan so‘ng Luma uni sizga yuboradi: saqlab qo‘ying va kirishda ko‘rsating. Boshqa hech narsa kerak emas, asosiysi o‘zingiz keling.'],
-    'faq.q8':['Am I a great person?','Men zo‘r odammanmi?'],'faq.a8':['Yes, without a doubt.','Ha, shubhasiz.'],
     'ct.title':['Contacts','Kontaktlar'],'ct.reach':['Get in touch','Bog‘lanish'],'ct.phone':['Phone','Telefon'],'ct.addr':['Address','Manzil'],
     'ct.addrv':['Tashkent, '+P('[venue address]'),'Toshkent, '+P('[joy manzili]')],'ct.coord':['Coordinates','Koordinatalar'],'ct.form':['Registration','Ro‘yxatdan o‘tish'],
     'fm.name':['Full name','Ism va familiya'],'fm.contact':['Phone or email','Telefon yoki email'],'fm.field':['Field','Soha'],'fm.send':['Send application','Arizani yuborish'],
@@ -866,8 +892,9 @@ body{background:var(--bg)}
 (function () {
   var P = function (s) { return '<span class="ph-in">' + s + '</span>'; };
   Object.assign(window.TAS3D_I18N, {
-    'nav.arch': ['Archive 2025', 'Arxiv 2025'],
-    'ar.title': ['Archive', 'Arxiv'],
+    'nav.arch': ['Gallery', 'Galereya'],
+    'ar.title': ['Gallery', 'Galereya'],
+    'gal.h': ['TAS3D 2025 Tashkent', 'TAS3D 2025 Toshkent'],
     'ab.what': ['What is TAS3D', 'TAS3D nima'],
     'fm.name': ['Name', 'Ism'],
     'fm.reg': ['Register', 'Ro‘yxatdan o‘tish'],
@@ -894,7 +921,7 @@ body{background:var(--bg)}
 
 </script>
 <script>
-/* TAS3D 2026 — behaviour: languages, views (#home #about #archive-2025 #contacts),
+/* TAS3D 2026 — behaviour: languages, views (#home #about #gallery #contacts),
    hero video, split-flap title, layered dark scroll, custom cursor, registration form. */
 (function () {
   // key: [EN, UZ]. RU is read from the markup. Messages starting with _ hold [RU, EN, UZ].
@@ -982,23 +1009,25 @@ body{background:var(--bg)}
   document.querySelectorAll('.lang button').forEach(function (bt) { bt.addEventListener('click', function () { pin(); layer(); }); });
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { pin(); layer(); });
 
-  // Night mode: dark once a [data-night] block of the current view reaches the lower part of the screen; archive is always dark
+  // Night mode: dark once a [data-night] block of the current view reaches the lower part of the screen; gallery is always dark
   var views = [].slice.call(document.querySelectorAll('.view'));
   var current = 'home';
   var ticking = false;
   function night() {
     ticking = false;
-    setNight(current === 'archive-2025');
+    setNight(current === 'gallery');
     layer();
   }
 
   // Views. #contacts and #register are sections now: they open their page and scroll to the block.
-  var ALIAS = { contacts: ['about', 'sec-contacts'], register: ['home', 'sec-reg'], 'tas3d-2026': ['home', 'sec-2026'] };
+  var ALIAS = { contacts: ['about', 'sec-contacts'], register: ['home', 'sec-reg'], 'tas3d-2026': ['home', 'sec-2026'], 'archive-2025': ['gallery', null] };
   function route() {
     var h = location.hash.replace('#', '');
     var target = null;
     if (ALIAS[h]) { target = ALIAS[h][1]; h = ALIAS[h][0]; }
-    var v = ['about', 'archive-2025'].indexOf(h) > -1 ? h : 'home';
+    var v = ['about', 'gallery'].indexOf(h) > -1 ? h : 'home';
+    // old links to #archive-2025 land on the gallery
+    if (location.hash === '#archive-2025') { try { history.replaceState(null, '', '#gallery'); } catch (e) {} }
     var changed = v !== current; current = v;
     views.forEach(function (el) { el.hidden = el.getAttribute('data-view') !== v; });
     document.querySelectorAll('.nav a').forEach(function (a) {
@@ -1253,7 +1282,7 @@ body{background:var(--bg)}
     })();
   }
 
-  // Archive gallery viewer
+  // Gallery photo viewer
   var lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg'), lbC = document.getElementById('lbC');
   var gis = [].slice.call(document.querySelectorAll('.gi')), li = 0, lastFocus = null;
   function lbShow(i) {
