@@ -606,6 +606,22 @@ body{background:var(--bg)}
    Cyrillic «ал», «ад», «Ад» and digit + en dash only 0.025em, so Russian gets almost no negative tracking. */
 html[lang="ru"]{--tr-xl:-.01em;--tr-l:-.005em;--tr-m:0em;--tr-s:0em}
 body{font-kerning:normal;font-variant-ligatures:common-ligatures;text-rendering:optimizeLegibility}
+/* v26: registration on computers — orange square in the bottom-right corner, 2 grid columns (variant C), slides in from the right edge.
+   Same element and logic as the phone button: shows after the first screen, hides at the registration block,
+   near the footer and after the forum. Title and date are bold 19px+ so white on orange passes 3:1 for large text. */
+.mreg-t{display:none}
+@media (min-width:901px){
+  .mreg{display:flex;flex-direction:column;align-items:flex-start;gap:6px;position:fixed;z-index:60;right:var(--padr);bottom:24px;
+    width:max(200px, calc((100vw - var(--pad) - var(--padr) - 11 * var(--gap)) / 12 * 2 + var(--gap)));aspect-ratio:1;padding:18px 20px;
+    background:var(--orange);color:#fff;font-size:22px;font-weight:700;line-height:1.1;letter-spacing:var(--tr-s);
+    box-shadow:0 12px 34px rgba(0,0,0,.22);transform:translateX(calc(100% + var(--padr) + 48px));opacity:1;visibility:hidden;pointer-events:none;
+    transition:transform .55s cubic-bezier(.2,.8,.2,1),visibility 0s linear .55s,background-color .2s}
+  .mreg.on{transform:none;opacity:1;visibility:visible;pointer-events:auto;transition-delay:0s}
+  .mreg .mreg-d{margin-left:0;font-size:19px;font-variant-numeric:tabular-nums}
+  .mreg .mreg-t{display:inline}
+  .mreg span[aria-hidden]{margin-top:auto;align-self:flex-end;font-size:64px;line-height:.8;font-weight:400}
+  .mreg:hover{background-color:#d9441a}
+}
 </style>
 </head>
 <body>
@@ -879,7 +895,7 @@ body{font-kerning:normal;font-variant-ligatures:common-ligatures;text-rendering:
   </main>
 </div>
 
-<a class="mreg after-hide" id="mreg" href="https://luma.com/i6r44wo4" target="_blank" rel="noopener"><span data-t="mreg">Registration</span><span class="mreg-d">03.12.2026</span><span aria-hidden="true">→</span></a>
+<a class="mreg after-hide" id="mreg" href="https://luma.com/i6r44wo4" target="_blank" rel="noopener"><span data-t="mreg">Registration</span><span class="mreg-d">03.12.2026<span class="mreg-t">, 15:00</span></span><span aria-hidden="true">→</span></a>
 <div class="cursor" aria-hidden="true"><span></span></div>
 <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="TAS3D 2025">
   <img class="lb-img" id="lbImg" alt="">
@@ -1461,7 +1477,11 @@ window.TAS3D_RU = {"skip": "К содержанию", "cd.d": "Дней", "cd.h"
   var mreg = document.getElementById('mreg'), regEl = document.getElementById('sec-reg'), regIn = false, mtick = false;
   function mregUpdate() {
     mtick = false;
-    var on = window.scrollY > window.innerHeight * 0.6 && !regIn;
+    var ft = document.querySelector('.view:not([hidden]) > .foot');
+    var footIn = ft && ft.getBoundingClientRect().top < window.innerHeight - 40;
+    var hero = current === 'home' && document.querySelector('[data-view="home"] .first');
+    var past = hero ? hero.getBoundingClientRect().bottom <= 0 : window.scrollY > window.innerHeight * 0.8;
+    var on = past && !regIn && !footIn;
     mreg.classList.toggle('on', on);
   }
   if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { regIn = es[0].isIntersecting && current === 'home'; mregUpdate(); }).observe(regEl);
