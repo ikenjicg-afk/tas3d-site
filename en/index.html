@@ -581,9 +581,13 @@ body{background:var(--bg)}
 }
 /* v23: partners (CAU); registration button fixed at the bottom on phones; gallery previews inside <picture> */
 .gi picture{display:block;width:100%;height:100%}
-.prt-l a{display:inline-block;color:inherit;transition:opacity .2s}
+.prt-l a{transition:opacity .2s}
 .prt-l a:hover{opacity:.6}
-.prt-cau{display:block;width:clamp(220px,26vw,400px);aspect-ratio:878/112;background-color:currentColor;-webkit-mask:url(/media/partners/cau.png) left center/contain no-repeat;mask:url(/media/partners/cau.png) left center/contain no-repeat}
+/* partner logos: one colour (current text colour), same height; PromptX has thin strokes and a descender, so it is a little taller */
+.prt-l{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(22px,2.4vw,40px) clamp(32px,4vw,72px)}
+.prt-l > *{display:block;color:inherit}
+.prt-logo{--ph:clamp(24px,3vw,44px);display:block;height:var(--ph);aspect-ratio:var(--ar);background-color:currentColor;-webkit-mask:var(--m) left center/contain no-repeat;mask:var(--m) left center/contain no-repeat}
+.prt-px{height:calc(var(--ph) * 1.18)}
 .mreg{display:none}
 @media (max-width:900px){
   .mreg{display:flex;position:fixed;z-index:60;left:var(--pad);right:var(--padr);bottom:calc(14px + env(safe-area-inset-bottom,0px));align-items:center;gap:12px;padding:0 18px;height:54px;background:var(--orange);color:#fff;font-size:17px;letter-spacing:var(--tr-s);box-shadow:0 8px 28px rgba(0,0,0,.28);transform:translateY(calc(100% + 30px));opacity:0;pointer-events:none;transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .25s}
@@ -770,7 +774,9 @@ body{font-kerning:normal;font-variant-ligatures:common-ligatures;text-rendering:
     <section class="blk g12 prt">
       <h2 class="k" data-t="prt.title">Partners</h2>
       <div class="v prt-l">
-        <a href="https://centralasian.uz/" target="_blank" rel="noopener" aria-label="Central Asian University"><i class="prt-cau" aria-hidden="true"></i></a>
+        <a href="https://centralasian.uz/" target="_blank" rel="noopener" aria-label="Central Asian University"><i class="prt-logo" style="--ar:7.839;--m:url(/media/partners/cau.png)" aria-hidden="true"></i></a>
+        <span role="img" aria-label="PromptX"><i class="prt-logo prt-px" style="--ar:4.793;--m:url(/media/partners/promptx.png)" aria-hidden="true"></i></span>
+        <span role="img" aria-label="Ultra Decor"><i class="prt-logo" style="--ar:6.466;--m:url(/media/partners/ultradecor.png)" aria-hidden="true"></i></span>
       </div>
     </section>
 
