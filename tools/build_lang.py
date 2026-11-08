@@ -85,6 +85,13 @@ class Finder(HTMLParser):
         if tag == 'template':
             self.tpl += 1
 
+    def handle_startendtag(self, tag, attrs):
+        # self-closing tags such as <circle .../> inside inline SVG icons: nothing to track
+        start = self.at()
+        text = self.get_starttag_text()
+        if self.src[start:start + len(text)] != text:
+            fail('lost track of the markup at %r' % text[:60])
+
     def handle_endtag(self, tag):
         end = self.at()
         if self.src[end:end + 2] != '</':
