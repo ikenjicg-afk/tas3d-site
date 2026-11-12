@@ -12,6 +12,15 @@
 
   Скрипт обновит `en/index.html`, `uz/index.html` и `sitemap.xml`.
 
+## Ежедневная проверка сайта
+Каждый день в 08:17 по Ташкенту GitHub запускает `tools/site_check.py` (вкладка Actions → «Site check»). Скрипт проверяет, что:
+- tas3d.uz и www.tas3d.uz ведут на GitHub Pages;
+- http:// переводит на https://;
+- сертификат HTTPS действителен ещё минимум 14 дней;
+- страницы `/`, `/en/`, `/uz/` на живом сайте байт в байт совпадают с файлами в репозитории.
+
+Если что-то не так, проверка падает и GitHub присылает письмо владельцу аккаунта. Запустить вручную: Actions → Site check → Run workflow.
+
 ## Ссылки
 - Регистрация: https://luma.com/i6r44wo4
 - Фото 2025 (все): https://drive.google.com/drive/folders/1lZOJY6GOSNlPPcEypep-JzIY0N3KchkF

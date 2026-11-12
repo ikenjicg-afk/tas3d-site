@@ -1,0 +1,25 @@
+# Daily check of the live site: tools/site_check.py explains what is checked.
+# If a run fails, GitHub e-mails the account owner.
+name: Site check
+
+on:
+  schedule:
+    - cron: '17 3 * * *'   # every day at 08:17 Tashkent time (03:17 UTC)
+  workflow_dispatch:         # "Run workflow" button on the Actions tab
+  push:
+    branches: [main]
+    paths:
+      - 'tools/site_check.py'
+      - '.github/workflows/site-check.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check tas3d.uz
+        run: python3 tools/site_check.py
