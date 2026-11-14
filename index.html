@@ -482,7 +482,7 @@ body{background:var(--bg)}
 .info{display:flow-root;padding-bottom:clamp(90px,10vw,160px)}
 .hello .links{justify-content:space-between}
 /* speakers: two large cards per row, on the grid lines */
-.spk-blk > .k{grid-column:1/-1}
+.spk-blk > .k,.hst-blk > .k{grid-column:1/-1}
 .spk2{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--gap);row-gap:clamp(48px,5vw,80px)}
 .sp{min-width:0}
 .sp-ph{position:relative;aspect-ratio:1/1;max-width:100%;overflow:hidden;background:var(--ph)}
@@ -757,10 +757,17 @@ body{font-kerning:normal;font-variant-ligatures:common-ligatures;text-rendering:
       <div class="spk2">
         <article class="sp"><div class="sp-ph"><img src="/media/speakers/daniel-nagaets.jpg" alt="" width="1200" height="1200" loading="lazy" decoding="async"></div><h3>Daniel Nagaets</h3><p class="sp-r" data-t="sp1.r">Основатель RENDER CAMP и Fortes Vision</p><p class="sp-l"><a href="https://www.instagram.com/danielnagaets/" target="_blank" rel="noopener" title="Instagram" aria-label="Daniel Nagaets в Instagram" data-ta="sp1.ig"><i class="sp-ic" style="--m:url(/media/icons/instagram.png)" aria-hidden="true"></i></a><a href="https://render.camp/" target="_blank" rel="noopener" title="render.camp" aria-label="Сайт RENDER CAMP" data-ta="sp1.web"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.6 2.6 3.9 5.8 3.9 9.5s-1.3 6.9-3.9 9.5c-2.6-2.6-3.9-5.8-3.9-9.5s1.3-6.9 3.9-9.5z"/></svg></a></p></article>
         <article class="sp"><div class="sp-ph"><img src="/media/speakers/vlad-sidorenko.jpg" alt="" width="1200" height="1200" loading="lazy" decoding="async"></div><h3>Vlad Sidorenko</h3><p class="sp-r" data-t="spv.r">Арт-директор OMEGA RENDER</p><p class="sp-l"><a href="https://www.instagram.com/vsdrnko/" target="_blank" rel="noopener" title="Instagram" aria-label="Vlad Sidorenko в Instagram" data-ta="spv.ig"><i class="sp-ic" style="--m:url(/media/icons/instagram.png)" aria-hidden="true"></i></a></p></article>
-        <article class="sp"><div class="sp-ph"><img src="/media/speakers/kenji.jpg" alt="" width="1200" height="1200" loading="lazy" decoding="async"></div><h3>KENJI</h3><p class="sp-r" data-t="kenji.r1">Ведущий TAS3D</p><p class="sp-r" data-t="kenji.r2">Lead 3D Artist в Apex Development</p><p class="sp-l"><a href="https://www.instagram.com/knji.knji/" target="_blank" rel="noopener" title="Instagram" aria-label="KENJI в Instagram" data-ta="kenji.ig"><i class="sp-ic" style="--m:url(/media/icons/instagram.png)" aria-hidden="true"></i></a></p></article>
         <article class="sp"><div class="sp-ph sp-tbd"><span>TBD</span></div><h3>TBD</h3><p class="sp-r" data-t="tbd">Скоро объявим</p></article>
         <article class="sp"><div class="sp-ph sp-tbd"><span>TBD</span></div><h3>TBD</h3><p class="sp-r" data-t="tbd">Скоро объявим</p></article>
         <article class="sp"><div class="sp-ph sp-tbd"><span>TBD</span></div><h3>TBD</h3><p class="sp-r" data-t="tbd">Скоро объявим</p></article>
+        <article class="sp"><div class="sp-ph sp-tbd"><span>TBD</span></div><h3>TBD</h3><p class="sp-r" data-t="tbd">Скоро объявим</p></article>
+      </div>
+    </section>
+
+    <section class="blk g12 hst-blk">
+      <h2 class="k" data-t="ab.host">Ведущий</h2>
+      <div class="spk2">
+        <article class="sp"><div class="sp-ph"><img src="/media/speakers/kenji.jpg" alt="" width="1200" height="1200" loading="lazy" decoding="async"></div><h3>KENJI</h3><p class="sp-r" data-t="kenji.r2">Lead 3D Artist в Apex Development</p><p class="sp-l"><a href="https://www.instagram.com/knji.knji/" target="_blank" rel="noopener" title="Instagram" aria-label="KENJI в Instagram" data-ta="kenji.ig"><i class="sp-ic" style="--m:url(/media/icons/instagram.png)" aria-hidden="true"></i></a></p></article>
       </div>
     </section>
     <template id="tpl-speakers">
@@ -1044,7 +1051,7 @@ body{font-kerning:normal;font-variant-ligatures:common-ligatures;text-rendering:
     'sp1.n': ['Daniel Nagaets', 'Daniel Nagaets'], 'sp1.r': ['Founder of RENDER CAMP and Fortes Vision', 'RENDER CAMP va Fortes Vision asoschisi'],
     'sp1.ig': ['Daniel Nagaets on Instagram', 'Daniel Nagaets Instagramda'],
     'spv.r': ['Art Director at OMEGA RENDER', 'OMEGA RENDER art-direktori'],
-    'kenji.r1': ['Host of TAS3D', 'TAS3D boshlovchisi'], 'kenji.r2': ['Lead 3D Artist at Apex Development', 'Apex Development’da Lead 3D Artist'],
+    'ab.host': ['Host', 'Boshlovchi'], 'kenji.r2': ['Lead 3D Artist at Apex Development', 'Apex Development’da Lead 3D Artist'],
     'kenji.ig': ['KENJI on Instagram', 'KENJI Instagramda'], 'spv.ig': ['Vlad Sidorenko on Instagram', 'Vlad Sidorenko Instagramda'], 'sp1.web': ['RENDER CAMP website', 'RENDER CAMP sayti'],
     'sp2.n': ['Artem Kupriianenko', 'Artem Kupriianenko'], 'sp2.r': ['Founder, Omegarender', 'Omegarender asoschisi'],
     'sp3.r': [P('[speaker name, role]'), P('[spiker ismi, lavozimi]')],
