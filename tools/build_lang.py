@@ -25,8 +25,8 @@ SITE = 'https://tas3d.uz'
 LANGS = {'en': 0, 'uz': 1}          # index in TAS3D_I18N values
 LOCALE = {'ru': 'ru_RU', 'en': 'en_US', 'uz': 'uz_UZ'}
 OG_DESC = {
-    'en': 'Tashkent, 03.12.2026, 15:00–19:00. Central Asian University.',
-    'uz': 'Toshkent, 03.12.2026, 15:00–19:00. Central Asian University.',
+    'en': 'Tashkent, 03.12.2026, 15:00. Central Asian University.',
+    'uz': 'Toshkent, 03.12.2026, 15:00. Central Asian University.',
 }
 EVENT_DESC = {
     'en': 'A forum on 3D visualisation in architecture: talks, workshops and networking for architects, visualisers, designers and developers.',
