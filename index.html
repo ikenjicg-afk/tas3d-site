@@ -188,6 +188,29 @@ h1,h2,h3{margin:0;font-weight:400}
 .row .n{font-size:clamp(17px,1.4vw,22px);letter-spacing:var(--tr-s)}
 .row .p{font-size:14px;color:var(--mute)}
 .row.talk .t{color:var(--orange)}
+/* Programme: a line with a dot per item (orange for talks); two parts, split at the coffee break.
+   Computer: 6 per row; each item draws the line from its dot to the right edge, .rows clips it,
+   so every visual row has one continuous line. Phone and tablet (up to 900 px): one column with a
+   vertical line on the left, time and name on one line (chosen by the user 28.11.2026). */
+.prog-blk > .k,.prog-blk > .v{grid-column:1/-1}
+.prg > .rows{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));column-gap:var(--gap);border:0;overflow:hidden}
+.prg > .rows + .rows{margin-top:50px}
+.prg .row{display:block;position:relative;border:0;padding:32px 0 0}
+.prg .row::after{content:"";position:absolute;left:0;right:-100vw;top:5px;height:1px;background:var(--fg)}
+.prg .row::before{content:"";position:absolute;left:0;top:0;width:11px;height:11px;border-radius:50%;background:var(--fg);z-index:1}
+.prg .row.talk::before{background:var(--orange)}
+.prg .row .t{display:block}
+.prg .row .n{display:block;margin-top:12px}
+@media (max-width:900px){
+  .prg > .rows{display:block;overflow:visible}
+  .prg > .rows + .rows{margin-top:0}
+  .prg .row{display:grid;grid-template-columns:64px minmax(0,1fr);column-gap:12px;align-items:baseline;padding:13px 0 13px 30px}
+  .prg .row .n{margin-top:0}
+  .prg .row::after{left:5px;right:auto;width:1px;height:auto;top:0;bottom:0}
+  .prg .row::before{top:19px}
+  .prg > .rows:first-child > .row:first-child::after{top:24px}
+  .prg > .rows:last-child > .row:last-child::after{bottom:auto;height:24px}
+}
 .spk{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
 .spk .ph{aspect-ratio:3/4}
 .spk h3{font-size:16px;font-weight:700;text-transform:uppercase;margin-top:12px;line-height:1.15}
@@ -727,14 +750,24 @@ body{font-kerning:normal;font-variant-ligatures:common-ligatures;text-rendering:
     </section>
     </template>
 
-    <section class="blk g12">
+    <section class="blk g12 prog-blk">
       <h2 class="k" data-t="ab.prog">Программа</h2>
-      <div class="v rows">
-        <div class="row"><span class="t">--:--</span><span class="n">TBD</span><span class="p" data-t="tbd">Скоро объявим</span></div>
-        <div class="row"><span class="t">--:--</span><span class="n">TBD</span><span class="p" data-t="tbd">Скоро объявим</span></div>
-        <div class="row"><span class="t">--:--</span><span class="n">TBD</span><span class="p" data-t="tbd">Скоро объявим</span></div>
-        <div class="row"><span class="t">--:--</span><span class="n">TBD</span><span class="p" data-t="tbd">Скоро объявим</span></div>
-        <div class="row"><span class="t">--:--</span><span class="n">TBD</span><span class="p" data-t="tbd">Скоро объявим</span></div>
+      <div class="v prg">
+        <div class="rows">
+          <div class="row"><span class="t">14:00</span><span class="n" data-t="pg.reg">Регистрация</span></div>
+          <div class="row"><span class="t">15:00</span><span class="n" data-t="pg.open">Открытие — KENJI</span></div>
+          <div class="row talk"><span class="t">15:20</span><span class="n">Artem Kupriianenko</span></div>
+          <div class="row talk"><span class="t">15:53</span><span class="n">Vlad Sidorenko</span></div>
+          <div class="row talk"><span class="t">16:26</span><span class="n">Daniel Nagaets</span></div>
+          <div class="row talk"><span class="t">16:59</span><span class="n">Islambek Urazbaev</span></div>
+        </div>
+        <div class="rows">
+          <div class="row"><span class="t">17:32</span><span class="n" data-t="pg.cof">Кофе-брейк</span></div>
+          <div class="row talk"><span class="t">18:05</span><span class="n">PromptX</span></div>
+          <div class="row talk"><span class="t">18:38</span><span class="n">Wellington Franzao</span></div>
+          <div class="row talk"><span class="t">19:11</span><span class="n">Zach Bai</span></div>
+          <div class="row"><span class="t">19:44</span><span class="n" data-t="pg.panel">Панельная дискуссия</span></div>
+        </div>
       </div>
     </section>
     <template id="tpl-program">
@@ -1042,6 +1075,8 @@ body{font-kerning:normal;font-variant-ligatures:common-ligatures;text-rendering:
     'ar.vid': ['TAS3D 2025 film', 'TAS3D 2025 filmi'],
     'ar.more': ['View all →', 'Barchasini ko‘rish →'],
     'tbd': ['To be announced soon', 'Tez orada e’lon qilinadi'],
+    'pg.reg': ['Registration', 'Ro‘yxatdan o‘tish'], 'pg.open': ['Opening — KENJI', 'Ochilish — KENJI'],
+    'pg.cof': ['Coffee break', 'Kofe-breyk'], 'pg.panel': ['Panel discussion', 'Panel muhokama'],
     'df1.h': ['Opening', 'Forum ochilishi'], 'df1.p': ['The host welcomes guests and walks through the day’s programme.', 'Boshlovchi mehmonlarni kutib oladi va kun dasturi bilan tanishtiradi.'],
     'df2.h': ['Speaker talks', 'Spikerlar ma’ruzalari'], 'df2.p': ['How AI is changing the visualisation industry: what is happening now, what to expect next and how to use AI in your work today.', 'Sun’iy intellekt vizualizatsiya sohasini qanday o‘zgartirmoqda: bugungi holat, prognozlar va undan ishda bugunoq amaliy foydalanish.'],
     'df3.h': ['Coffee break', 'Kofe-breyk'], 'df3.p': ['Time to meet colleagues and ask the speakers your questions.', 'Hamkasblar bilan tanishish va spikerlarga savol berish uchun vaqt.'],
@@ -1542,9 +1577,9 @@ window.TAS3D_HEAD = {
   window.addEventListener('hashchange', themeSoon);
   themeSoon();
 
-  // After the forum (03.12.2026, 19:00 in Tashkent) the registration block shows a thank-you note,
-  // the phone button and the registration link on About disappear
-  var END = Date.UTC(2026, 11, 3, 14, 0, 0);
+  // After the forum (03.12.2026, 21:00 in Tashkent; the programme runs past 20:00) the registration block
+  // shows a thank-you note, the phone button and the registration link on About disappear
+  var END = Date.UTC(2026, 11, 3, 16, 0, 0);
   function afterCheck() {
     if (Date.now() < END) return false;
     root.classList.add('after');
